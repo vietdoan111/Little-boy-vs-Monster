@@ -14,12 +14,12 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Animator animator;
-    public Transform FirePoint;
+    public Transform firePoint;
     public GameObject bulletPrefab;
     public float arrowForce = 20f;
 
 
-    float HorizontalDir, VerticalDir;
+    float horizontalDir, verticalDir;
     Vector2 movement;
     Vector3 shootUp = new Vector3(0, 0, 0);
     Vector3 shootDown = new Vector3(0, 0, 180);
@@ -66,27 +66,27 @@ public class PlayerMovement : MonoBehaviour
 
     void RotateArrow()
     {
-        firePointStart = FirePoint.position;
-        if (VerticalDir > 0.5)
+        firePointStart = firePoint.position;
+        if (verticalDir > 0.5)
         {
-            FirePoint.eulerAngles = shootUp;
+            firePoint.eulerAngles = shootUp;
             firePointStart.y += 1.5f;
         }
-        else if (VerticalDir < -0.5)
+        else if (verticalDir < -0.5)
         {
-            FirePoint.eulerAngles = shootDown;
+            firePoint.eulerAngles = shootDown;
             firePointStart.y--;
         }
-        else if (VerticalDir == 0)
+        else if (verticalDir == 0)
         {
-            if (HorizontalDir > 0.5)
+            if (horizontalDir > 0.5)
             {
-                FirePoint.eulerAngles = shootRight;
+                firePoint.eulerAngles = shootRight;
                 firePointStart.x++;
             }
-            else if (HorizontalDir < -0.5)
+            else if (horizontalDir < -0.5)
             {
-                FirePoint.eulerAngles = shootLeft;
+                firePoint.eulerAngles = shootLeft;
                 firePointStart.x--;
             }
         }
@@ -97,8 +97,8 @@ public class PlayerMovement : MonoBehaviour
         if (movement != Vector2.zero)
         {
             Move();
-            HorizontalDir = movement.x;
-            VerticalDir = movement.y;
+            horizontalDir = movement.x;
+            verticalDir = movement.y;
             animator.SetFloat("Horizontal", movement.x);
             animator.SetFloat("Vertical", movement.y);
         }
@@ -113,9 +113,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Shoot()
     {
-        GameObject arrow = Instantiate(bulletPrefab, firePointStart, FirePoint.rotation);
+        GameObject arrow = Instantiate(bulletPrefab, firePointStart, firePoint.rotation);
         Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
-        rb.AddForce(FirePoint.up * arrowForce, ForceMode2D.Impulse);
+        rb.AddForce(firePoint.up * arrowForce, ForceMode2D.Impulse);
     }
 
     private IEnumerator ShootingCo()
