@@ -10,10 +10,10 @@ public enum PlayerState
 
 public class PlayerMovement : MonoBehaviour
 {
+    public PlayerState state;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Animator animator;
-    public bool isShooting;
     public Transform FirePoint;
     public GameObject bulletPrefab;
     public float arrowForce = 20f;
@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 shootDown = new Vector3(0, 0, 180);
     Vector3 shootLeft = new Vector3(0, 0, 90);
     Vector3 shootRight = new Vector3(0, 0, -90);
+    bool isShooting;
+    Vector3 firePointStart;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         animator = this.GetComponent<Animator>();
         rb = this.GetComponent<Rigidbody2D>();
         animator.SetFloat("Horizontal", 0);
-        animator.SetFloat("Vertical", -1);
+        animator.SetFloat("Vertical", 1);
     }
 
     // Update is called once per frame
@@ -44,14 +46,52 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Animate();
+        if (isShooting && state != PlayerState.shootArrow)
+        {
+            StartCoroutine(ShootingCo());
+        }
+        else if (state == PlayerState.walk)
+        {
+            Animate();
+        }
     }
 
     void ProcessInputs()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        isShooting = Input.GetButton("Fire1");
+        if (isShooting) RotateArrow();
     }
+
+    void RotateArrow()
+    {
+        firePointStart = FirePoint.position;
+        if (VerticalDir > 0.5)
+        {
+            FirePoint.eulerAngles = shootUp;
+            firePointStart.y += 1.5f;
+        }
+        else if (VerticalDir < -0.5)
+        {
+            FirePoint.eulerAngles = shootDown;
+            firePointStart.y--;
+        }
+        else if (VerticalDir == 0)
+        {
+            if (HorizontalDir > 0.5)
+            {
+                FirePoint.eulerAngles = shootRight;
+                firePointStart.x++;
+            }
+            else if (HorizontalDir < -0.5)
+            {
+                FirePoint.eulerAngles = shootLeft;
+                firePointStart.x--;
+            }
+        }
+    }
+
     void Animate()
     {
         if (movement != Vector2.zero)
@@ -67,7 +107,24 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        movement.Normalize(); // ?i chéo s? ko b? nhanh h?n d?c và ngang
+        movement.Normalize();
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    void Shoot()
+    {
+        GameObject arrow = Instantiate(bulletPrefab, firePointStart, FirePoint.rotation);
+        Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
+        rb.AddForce(FirePoint.up * arrowForce, ForceMode2D.Impulse);
+    }
+
+    private IEnumerator ShootingCo()
+    {
+        animator.SetBool("Shoot", true);
+        state = PlayerState.shootArrow;
+        yield return new WaitForSeconds(0.25f);
+        Shoot();
+        animator.SetBool("Shoot", false);
+        state = PlayerState.walk;
     }
 }
