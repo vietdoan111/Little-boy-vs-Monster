@@ -2,15 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlayerState
+{
+    walk,
+    shootArrow
+}
+
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Animator animator;
-    
-    
+    public bool isShooting;
+    public Transform FirePoint;
+    public GameObject bulletPrefab;
+    public float arrowForce = 20f;
+
+
     float HorizontalDir, VerticalDir;
     Vector2 movement;
+    Vector3 shootUp = new Vector3(0, 0, 0);
+    Vector3 shootDown = new Vector3(0, 0, 180);
+    Vector3 shootLeft = new Vector3(0, 0, 90);
+    Vector3 shootRight = new Vector3(0, 0, -90);
 
     // Start is called before the first frame update
     void Start()
