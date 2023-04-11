@@ -8,7 +8,7 @@ public enum PlayerState
     shootArrow
 }
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : Player
 {
     public PlayerState state;
     public float moveSpeed = 5f;
@@ -31,8 +31,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = this.GetComponent<Animator>();
-        rb = this.GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
         animator.SetFloat("Horizontal", 0);
         animator.SetFloat("Vertical", 1);
     }
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isShooting && state != PlayerState.shootArrow)
+        if (isShooting && state != PlayerState.shootArrow && arrowNum > 0)
         {
             StartCoroutine(ShootingCo());
         }
@@ -67,27 +67,27 @@ public class PlayerMovement : MonoBehaviour
     void RotateArrow()
     {
         firePointStart = firePoint.position;
-        if (verticalDir > 0.5)
+        if (horizontalDir > 0.5)
         {
-            firePoint.eulerAngles = shootUp;
-            firePointStart.y += 1.5f;
+            firePoint.eulerAngles = shootRight;
+            firePointStart.x += 1.5f;
         }
-        else if (verticalDir < -0.5)
+        else if (horizontalDir < -0.5)
         {
-            firePoint.eulerAngles = shootDown;
-            firePointStart.y--;
+            firePoint.eulerAngles = shootLeft;
+            firePointStart.x -= 1.5f;
         }
-        else if (verticalDir == 0)
+        else
         {
-            if (horizontalDir > 0.5)
+            if (verticalDir > 0.5)
             {
-                firePoint.eulerAngles = shootRight;
-                firePointStart.x++;
+                firePoint.eulerAngles = shootUp;
+                firePointStart.y += 2.5f;
             }
-            else if (horizontalDir < -0.5)
+            else if (verticalDir < -0.5)
             {
-                firePoint.eulerAngles = shootLeft;
-                firePointStart.x--;
+                firePoint.eulerAngles = shootDown;
+                firePointStart.y -= 2.0f;
             }
         }
     }
@@ -113,6 +113,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Shoot()
     {
+        arrowNum--;
+        Debug.Log("arrow num when shoot: " + arrowNum);
         GameObject arrow = Instantiate(bulletPrefab, firePointStart, firePoint.rotation);
         Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * arrowForce, ForceMode2D.Impulse);
