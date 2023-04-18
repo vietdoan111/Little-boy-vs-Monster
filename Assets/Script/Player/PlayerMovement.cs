@@ -5,10 +5,10 @@ using UnityEngine;
 public enum PlayerState
 {
     walk,
-    shootArrow
+    attack
 }
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : Player
 {
     public PlayerState state;
     public float moveSpeed = 5f;
@@ -16,23 +16,25 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public Sword sword;
     public float arrowForce = 20f;
 
 
     float horizontalDir, verticalDir;
     Vector2 movement;
-    Vector3 shootUp = new Vector3(0, 0, 0);
-    Vector3 shootDown = new Vector3(0, 0, 180);
-    Vector3 shootLeft = new Vector3(0, 0, 90);
-    Vector3 shootRight = new Vector3(0, 0, -90);
+    Vector3 turnUp = new Vector3(0, 0, 0);
+    Vector3 turnDown = new Vector3(0, 0, 180);
+    Vector3 turnLeft = new Vector3(0, 0, 90);
+    Vector3 turnRight = new Vector3(0, 0, -90);
     bool isShooting;
+    bool isMelee;
     Vector3 firePointStart;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = this.GetComponent<Animator>();
-        rb = this.GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
         animator.SetFloat("Horizontal", 0);
         animator.SetFloat("Vertical", 1);
     }
@@ -46,14 +48,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isShooting && state != PlayerState.shootArrow)
+        if (state != PlayerState.attack)
         {
-            StartCoroutine(ShootingCo());
+            RotateWeapon();
+            if (isShooting && arrowNum > 0) StartCoroutine(ShootingCo());
+            if (isMelee) StartCoroutine(MeleeCo());
         }
-        else if (state == PlayerState.walk)
-        {
-            Animate();
-        }
+
+        if (state == PlayerState.walk) Animate();
     }
 
     void ProcessInputs()
@@ -61,33 +63,37 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         isShooting = Input.GetButton("Fire1");
-        if (isShooting) RotateArrow();
+        isMelee = Input.GetButton("Fire2");
     }
 
-    void RotateArrow()
+    void RotateWeapon()
     {
         firePointStart = firePoint.position;
-        if (verticalDir > 0.5)
+        if (horizontalDir > 0.5)
         {
-            firePoint.eulerAngles = shootUp;
-            firePointStart.y += 1.5f;
+            sword.transform.eulerAngles = turnRight;
+            firePoint.eulerAngles = turnRight;
+            firePointStart.x += 1.5f;
         }
-        else if (verticalDir < -0.5)
+        else if (horizontalDir < -0.5)
         {
-            firePoint.eulerAngles = shootDown;
-            firePointStart.y--;
+            sword.transform.eulerAngles = turnLeft;
+            firePoint.eulerAngles = turnLeft;
+            firePointStart.x -= 1.5f;
         }
-        else if (verticalDir == 0)
+        else
         {
-            if (horizontalDir > 0.5)
+            if (verticalDir > 0.5)
             {
-                firePoint.eulerAngles = shootRight;
-                firePointStart.x++;
+                sword.transform.eulerAngles = turnUp;
+                firePoint.eulerAngles = turnUp;
+                firePointStart.y += 2.5f;
             }
-            else if (horizontalDir < -0.5)
+            else if (verticalDir < -0.5)
             {
-                firePoint.eulerAngles = shootLeft;
-                firePointStart.x--;
+                sword.transform.eulerAngles = turnDown;
+                firePoint.eulerAngles = turnDown;
+                firePointStart.y -= 2.0f;
             }
         }
     }
@@ -113,6 +119,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Shoot()
     {
+        arrowNum--;
+        Debug.Log("arrow num when shoot: " + arrowNum);
         GameObject arrow = Instantiate(bulletPrefab, firePointStart, firePoint.rotation);
         Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * arrowForce, ForceMode2D.Impulse);
@@ -121,10 +129,20 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator ShootingCo()
     {
         animator.SetBool("Shoot", true);
-        state = PlayerState.shootArrow;
+        state = PlayerState.attack;
         yield return new WaitForSeconds(0.25f);
         Shoot();
         animator.SetBool("Shoot", false);
+        state = PlayerState.walk;
+    }
+
+    private IEnumerator MeleeCo()
+    {
+        state = PlayerState.attack;
+        rb.velocity = Vector2.zero;
+        sword.gameObject.SetActive(true);
+        yield return new WaitForSeconds(sword.swingTime);
+        sword.gameObject.SetActive(false);
         state = PlayerState.walk;
     }
 }
