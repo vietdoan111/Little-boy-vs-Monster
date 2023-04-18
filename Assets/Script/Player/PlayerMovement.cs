@@ -16,7 +16,7 @@ public class PlayerMovement : Player
     public Animator animator;
     public Transform firePoint;
     public GameObject bulletPrefab;
-    public GameObject sword;
+    public Sword sword;
     public float arrowForce = 20f;
 
 
@@ -50,14 +50,12 @@ public class PlayerMovement : Player
     {
         if (state != PlayerState.attack)
         {
+            RotateWeapon();
             if (isShooting && arrowNum > 0) StartCoroutine(ShootingCo());
-            if (isMelee) sword.SetActive(true);
+            if (isMelee) StartCoroutine(MeleeCo());
         }
-        
-        if (state == PlayerState.walk)
-        {
-            Animate();
-        }
+
+        if (state == PlayerState.walk) Animate();
     }
 
     void ProcessInputs()
@@ -66,7 +64,6 @@ public class PlayerMovement : Player
         movement.y = Input.GetAxisRaw("Vertical");
         isShooting = Input.GetButton("Fire1");
         isMelee = Input.GetButton("Fire2");
-        if (isShooting || isMelee) RotateWeapon();
     }
 
     void RotateWeapon()
@@ -136,6 +133,16 @@ public class PlayerMovement : Player
         yield return new WaitForSeconds(0.25f);
         Shoot();
         animator.SetBool("Shoot", false);
+        state = PlayerState.walk;
+    }
+
+    private IEnumerator MeleeCo()
+    {
+        state = PlayerState.attack;
+        rb.velocity = Vector2.zero;
+        sword.gameObject.SetActive(true);
+        yield return new WaitForSeconds(sword.swingTime);
+        sword.gameObject.SetActive(false);
         state = PlayerState.walk;
     }
 }
