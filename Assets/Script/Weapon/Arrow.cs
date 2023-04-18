@@ -18,7 +18,6 @@ public class Arrow : MonoBehaviour
         player = FindObjectOfType<Player>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         waitTime += Time.deltaTime;
