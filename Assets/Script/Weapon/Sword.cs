@@ -44,7 +44,7 @@ public class Sword : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             Enemy monster = enemy.GetComponent<Enemy>();
-            if (monster != null) monster.TakeDamage(swordTrans.position);
+            if (monster != null) monster.TakeDamage(swordTip.position);
         }
     }
 }

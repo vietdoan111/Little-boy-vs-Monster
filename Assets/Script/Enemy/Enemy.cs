@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(Vector3 weaponPos)
     {
+        if (enemyState == EnemyState.stagger) return;
         StartCoroutine(TakeDmgCo(weaponPos));
     }
 
@@ -33,7 +34,7 @@ public class Enemy : MonoBehaviour
     {
         enemyState = EnemyState.stagger;
         Vector2 direction = weaponPos - transform.position;
-        rb.AddForce(-direction * 15f, ForceMode2D.Impulse);
+        rb.velocity = -direction * 15f;
         yield return new WaitForSeconds(0.1f);
         health--;
         if (health <= 0) Destroy(gameObject);
