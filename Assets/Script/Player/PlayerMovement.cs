@@ -2,18 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PlayerState
-{
-    walk,
-    attack
-}
-
 public class PlayerMovement : Player
 {
-    public PlayerState state;
     public float moveSpeed = 5f;
-    public Rigidbody2D rb;
-    public Animator animator;
     public Transform firePoint;
     public GameObject bulletPrefab;
     public Sword sword;
@@ -29,15 +20,6 @@ public class PlayerMovement : Player
     bool isShooting;
     bool isMelee;
     Vector3 firePointStart;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        animator.SetFloat("Horizontal", 0);
-        animator.SetFloat("Vertical", 1);
-    }
 
     // Update is called once per frame
     void Update()

@@ -149,12 +149,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3a8f8d300fef445a54c1b6df5f2c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heath: 0
+  health: 5
   arrowNum: 5
+  animator: {fileID: 0}
+  rb: {fileID: 0}
   state: 0
   moveSpeed: 5
-  rb: {fileID: 0}
-  animator: {fileID: 0}
   firePoint: {fileID: 1761955822948088817}
   bulletPrefab: {fileID: 3434963068405086867, guid: 3e0e7d7cf5327b546a35b9ee70361ebc, type: 3}
   sword: {fileID: 5889826231859507877}

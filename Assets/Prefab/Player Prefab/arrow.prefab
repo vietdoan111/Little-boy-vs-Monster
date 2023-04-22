@@ -147,6 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  maxFlyingTime: 3
+  maxFlyingTime: 0.5
   maxAppearingTime: 5
   rb: {fileID: 0}

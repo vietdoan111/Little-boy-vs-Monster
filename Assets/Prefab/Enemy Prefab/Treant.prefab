@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 10491668509764398}
   - component: {fileID: 141514193718574935}
   - component: {fileID: 7312399988773643222}
+  - component: {fileID: 4894004354270221931}
   m_Layer: 10
   m_Name: Treant
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,3 +134,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4894004354270221931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8240543165268528689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1c03ca95a15ba4cb81e191e8c3760b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  lookRadius: 0
+  enemyState: 0
+  rb: {fileID: 0}

@@ -43,7 +43,8 @@ public class Sword : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("Hit enemy: " + enemy.name);
+            Enemy monster = enemy.GetComponent<Enemy>();
+            if (monster != null) monster.TakeDamage(swordTip.position);
         }
     }
 }
