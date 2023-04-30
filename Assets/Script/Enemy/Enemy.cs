@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public enum EnemyState
 {
@@ -12,16 +13,18 @@ public enum EnemyState
 
 public class Enemy : MonoBehaviour
 {
+    public Transform target;
     public int health;
     public float lookRadius;
     public EnemyState enemyState;
     public Rigidbody2D rb;
+    public Animator animator;
+    public NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        enemyState = EnemyState.patrol;
+
     }
 
     public void TakeDamage(Vector3 weaponPos)

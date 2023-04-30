@@ -22,13 +22,13 @@ public class Arrow : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        player = FindObjectOfType<Player>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     void FixedUpdate()
     {
         waitTime += Time.deltaTime;
-        if (waitTime > maxFlyingTime)
+        if (waitTime > maxFlyingTime && waitTime < maxAppearingTime)
         {
             Debug.Log("arrow grounded");
             rb.velocity = Vector2.zero;
