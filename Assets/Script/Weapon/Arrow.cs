@@ -25,11 +25,6 @@ public class Arrow : MonoBehaviour
         player = FindObjectOfType<Player>();
     }
 
-    void Update()
-    {
-        if (state == ArrowState.grounded) rb.bodyType = RigidbodyType2D.Kinematic;
-    }
-
     void FixedUpdate()
     {
         waitTime += Time.deltaTime;
