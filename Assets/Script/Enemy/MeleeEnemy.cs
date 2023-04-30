@@ -25,7 +25,7 @@ public class MeleeEnemy : Enemy
     void Update()
     {
         enemyState = EnemyState.patrol;
-        if (checkDis()) enemyState = EnemyState.chase;
+        if (CheckDis()) enemyState = EnemyState.chase;
         Patrol(startPos);
         Chase();
         Animate();
@@ -57,7 +57,7 @@ public class MeleeEnemy : Enemy
         FindFacingDirection();
     }
 
-    public bool checkDis()
+    public bool CheckDis()
     {
         if (enemyState == EnemyState.stagger) return false;
         if (Vector2.Distance(transform.position, target.position) > lookRadius) return false;

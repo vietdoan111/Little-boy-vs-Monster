@@ -21,12 +21,6 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     public NavMeshAgent agent;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     public void TakeDamage(Vector3 weaponPos)
     {
         if (enemyState == EnemyState.stagger) return;
