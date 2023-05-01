@@ -33,6 +33,7 @@ public class MeleeEnemy : Enemy
     // Update is called once per frame
     void Update()
     {
+        if (enemyState == EnemyState.stagger) return;
         enemyState = EnemyState.patrol;
         if (!isMoving) waitTime += Time.deltaTime;
         if (CheckDis()) enemyState = EnemyState.chase;
