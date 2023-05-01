@@ -1,24 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MeleeEnemy : Enemy
 {
-    public Vector3 startPos;
+    public Vector3 nextPatrolPos;
+    public float maxPatrolDis;
 
+    Vector2 startPos;
     Vector3 movement;
+    bool isMoving = false;
+    NavMeshPath navMeshPath;
+    int count = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position;
+        nextPatrolPos = startPos;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
         enemyState = EnemyState.patrol;
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         animator = GetComponent<Animator>();
+        navMeshPath = new NavMeshPath();
     }
 
     // Update is called once per frame
@@ -26,7 +34,7 @@ public class MeleeEnemy : Enemy
     {
         enemyState = EnemyState.patrol;
         if (CheckDis()) enemyState = EnemyState.chase;
-        Patrol(startPos);
+        Patrol(nextPatrolPos);
         Chase();
         Animate();
     }
@@ -39,7 +47,6 @@ public class MeleeEnemy : Enemy
 
         movement.y = upVector.magnitude * Vector3.Dot(upVector, transform.up);
         movement.x = rightVector.magnitude * Vector3.Dot(rightVector, transform.right);
-
     }
 
     public void Chase()
@@ -49,11 +56,14 @@ public class MeleeEnemy : Enemy
         FindFacingDirection();
     }
 
-    public void Patrol(Vector3 startPos)
+    public void Patrol(Vector3 desiredPos)
     {
         if (enemyState != EnemyState.patrol) return;
-        enemyState = EnemyState.patrol;
-        agent.SetDestination(startPos);
+        FindNextPatrolSpot();
+        if (agent.CalculatePath(desiredPos, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+        {
+            agent.SetPath(navMeshPath);
+        }
         FindFacingDirection();
     }
 
@@ -68,7 +78,16 @@ public class MeleeEnemy : Enemy
     {
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
-        animator.SetBool("IsMoving", false);
-        if (agent.desiredVelocity.sqrMagnitude > 0.01f) animator.SetBool("IsMoving", true);
+        isMoving = false;
+        if (agent.desiredVelocity.sqrMagnitude > 0.01f) isMoving = true;
+        animator.SetBool("IsMoving", isMoving);
+    }
+
+    void FindNextPatrolSpot()
+    {
+        if (isMoving) return;
+        nextPatrolPos.x = startPos.x + Random.Range(-maxPatrolDis, maxPatrolDis);
+        nextPatrolPos.y = startPos.y + Random.Range(-maxPatrolDis, maxPatrolDis);
+        Debug.Log("find next spot");
     }
 }

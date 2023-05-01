@@ -197,4 +197,5 @@ MonoBehaviour:
   rb: {fileID: 0}
   animator: {fileID: 0}
   agent: {fileID: 0}
-  startPos: {x: 0, y: 0, z: 0}
+  nextPatrolPos: {x: 0, y: 0, z: 0}
+  maxPatrolDis: 3
