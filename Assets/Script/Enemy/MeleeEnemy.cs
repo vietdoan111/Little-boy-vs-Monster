@@ -7,12 +7,13 @@ public class MeleeEnemy : Enemy
 {
     public Vector3 nextPatrolPos;
     public float maxPatrolDis;
+    public float maxWaitTime;
 
+    float waitTime;
     Vector2 startPos;
     Vector3 movement;
     bool isMoving = false;
     NavMeshPath navMeshPath;
-    int count = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class MeleeEnemy : Enemy
     void Update()
     {
         enemyState = EnemyState.patrol;
+        if (!isMoving) waitTime += Time.deltaTime;
         if (CheckDis()) enemyState = EnemyState.chase;
         Patrol(nextPatrolPos);
         Chase();
@@ -85,9 +87,9 @@ public class MeleeEnemy : Enemy
 
     void FindNextPatrolSpot()
     {
-        if (isMoving) return;
+        if (waitTime < maxWaitTime) return;
         nextPatrolPos.x = startPos.x + Random.Range(-maxPatrolDis, maxPatrolDis);
         nextPatrolPos.y = startPos.y + Random.Range(-maxPatrolDis, maxPatrolDis);
-        Debug.Log("find next spot");
+        waitTime = 0.0f;
     }
 }

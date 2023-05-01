@@ -178,3 +178,4 @@ MonoBehaviour:
   agent: {fileID: 0}
   nextPatrolPos: {x: 0, y: 0, z: 0}
   maxPatrolDis: 3
+  maxWaitTime: 5
