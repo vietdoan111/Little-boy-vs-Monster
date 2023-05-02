@@ -20,6 +20,14 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public NavMeshAgent agent;
+    public Vector3 nextPatrolPos;
+    public float maxPatrolDis;
+    public float maxWaitTime;
+    public NavMeshPath navMeshPath;
+    public float waitTime;
+    public Vector2 startPos;
+    public Vector3 movement;
+    public bool isMoving = false;
 
     public void TakeDamage(Vector3 weaponPos)
     {
@@ -37,5 +45,57 @@ public class Enemy : MonoBehaviour
         if (health <= 0) Destroy(gameObject);
         rb.velocity = Vector2.zero;
         enemyState = EnemyState.patrol;
+    }
+
+    public void FindFacingDirection()
+    {
+        Vector3 normalizedMovement = agent.desiredVelocity.normalized;
+        Vector3 upVector = Vector3.Project(normalizedMovement, transform.up);
+        Vector3 rightVector = Vector3.Project(normalizedMovement, transform.right);
+
+        movement.y = upVector.magnitude * Vector3.Dot(upVector, transform.up);
+        movement.x = rightVector.magnitude * Vector3.Dot(rightVector, transform.right);
+    }
+
+    public void Chase()
+    {
+        if (enemyState != EnemyState.chase) return;
+        agent.SetDestination(target.position);
+        FindFacingDirection();
+    }
+
+    public void Patrol(Vector3 desiredPos)
+    {
+        if (enemyState != EnemyState.patrol) return;
+        FindNextPatrolSpot();
+        if (agent.CalculatePath(desiredPos, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+        {
+            agent.SetPath(navMeshPath);
+        }
+        FindFacingDirection();
+    }
+
+    public bool CheckDis()
+    {
+        if (enemyState == EnemyState.stagger) return false;
+        if (Vector2.Distance(transform.position, target.position) > lookRadius) return false;
+        return true;
+    }
+
+    public void Animate()
+    {
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        isMoving = false;
+        if (agent.desiredVelocity.sqrMagnitude > 0.01f) isMoving = true;
+        animator.SetBool("IsMoving", isMoving);
+    }
+
+    void FindNextPatrolSpot()
+    {
+        if (waitTime < maxWaitTime) return;
+        nextPatrolPos.x = startPos.x + Random.Range(-maxPatrolDis, maxPatrolDis);
+        nextPatrolPos.y = startPos.y + Random.Range(-maxPatrolDis, maxPatrolDis);
+        waitTime = 0.0f;
     }
 }

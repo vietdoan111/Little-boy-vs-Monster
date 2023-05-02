@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MeleeEnemy : Enemy
+public class RangedEnemy : Enemy
 {
     // Start is called before the first frame update
     void Start()
@@ -23,12 +23,6 @@ public class MeleeEnemy : Enemy
     // Update is called once per frame
     void Update()
     {
-        if (enemyState == EnemyState.stagger) return;
-        enemyState = EnemyState.patrol;
-        if (!isMoving) waitTime += Time.deltaTime;
-        if (CheckDis()) enemyState = EnemyState.chase;
-        Patrol(nextPatrolPos);
-        Chase();
-        Animate();
+        
     }
 }
