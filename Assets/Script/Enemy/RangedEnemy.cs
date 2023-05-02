@@ -23,6 +23,20 @@ public class RangedEnemy : Enemy
     // Update is called once per frame
     void Update()
     {
-        
+        if (enemyState == EnemyState.stagger) return;
+        enemyState = EnemyState.patrol;
+        if (!isMoving) waitTime += Time.deltaTime;
+        if (CheckDis()) enemyState = EnemyState.chase;
+        Patrol(nextPatrolPos);
+        Chase();
+        Animate();
+    }
+
+    void Animate()
+    {
+        isMoving = false;
+        if (agent.desiredVelocity.sqrMagnitude > 0.01f) isMoving = true;
+        if (health > 0) return;
+        animator.SetBool("IsDead", isDead);
     }
 }

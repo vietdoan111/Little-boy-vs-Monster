@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 5037935286290745140}
   - component: {fileID: 5037935286290745141}
   - component: {fileID: 5037935286290745099}
-  m_Layer: 0
+  - component: {fileID: 1275463394847781694}
+  m_Layer: 10
   m_Name: Fire Demon
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,16 +169,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  health: 0
-  lookRadius: 0
+  health: 3
+  lookRadius: 3
   enemyState: 0
   rb: {fileID: 0}
   animator: {fileID: 0}
   agent: {fileID: 0}
   nextPatrolPos: {x: 0, y: 0, z: 0}
-  maxPatrolDis: 0
-  maxWaitTime: 0
+  maxPatrolDis: 2
+  maxWaitTime: 3
   waitTime: 0
   startPos: {x: 0, y: 0}
   movement: {x: 0, y: 0, z: 0}
   isMoving: 0
+  deathTime: 1
+--- !u!195 &1275463394847781694
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5037935286290745137}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.703125
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2.8125
+  m_BaseOffset: 1.40625
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

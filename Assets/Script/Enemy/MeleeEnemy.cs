@@ -31,4 +31,13 @@ public class MeleeEnemy : Enemy
         Chase();
         Animate();
     }
+
+    void Animate()
+    {
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        isMoving = false;
+        if (agent.desiredVelocity.sqrMagnitude > 0.01f) isMoving = true;
+        animator.SetBool("IsMoving", isMoving);
+    }
 }

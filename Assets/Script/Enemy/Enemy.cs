@@ -8,7 +8,10 @@ public enum EnemyState
     patrol,
     chase,
     attack,
-    stagger
+    retreat,
+    dodge,
+    stagger,
+    dead
 }
 
 public class Enemy : MonoBehaviour
@@ -28,6 +31,8 @@ public class Enemy : MonoBehaviour
     public Vector2 startPos;
     public Vector3 movement;
     public bool isMoving = false;
+    public float deathTime;
+    public bool isDead;
 
     public void TakeDamage(Vector3 weaponPos)
     {
@@ -42,8 +47,14 @@ public class Enemy : MonoBehaviour
         rb.velocity = -direction * 15f;
         yield return new WaitForSeconds(0.1f);
         health--;
-        if (health <= 0) Destroy(gameObject);
         rb.velocity = Vector2.zero;
+        if (health <= 0)
+        {
+            isDead = true;
+            enemyState = EnemyState.dead;
+            yield return new WaitForSeconds(deathTime);
+            Destroy(gameObject);
+        }
         enemyState = EnemyState.patrol;
     }
 
@@ -80,15 +91,6 @@ public class Enemy : MonoBehaviour
         if (enemyState == EnemyState.stagger) return false;
         if (Vector2.Distance(transform.position, target.position) > lookRadius) return false;
         return true;
-    }
-
-    public void Animate()
-    {
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        isMoving = false;
-        if (agent.desiredVelocity.sqrMagnitude > 0.01f) isMoving = true;
-        animator.SetBool("IsMoving", isMoving);
     }
 
     void FindNextPatrolSpot()

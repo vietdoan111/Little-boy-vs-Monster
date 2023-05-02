@@ -154,7 +154,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2.1875
-  m_BaseOffset: 0
+  m_BaseOffset: 1.1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &529842084394684833
@@ -179,3 +179,7 @@ MonoBehaviour:
   nextPatrolPos: {x: 0, y: 0, z: 0}
   maxPatrolDis: 3
   maxWaitTime: 5
+  waitTime: 0
+  startPos: {x: 0, y: 0}
+  movement: {x: 0, y: 0, z: 0}
+  isMoving: 0
