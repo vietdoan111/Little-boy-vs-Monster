@@ -52,6 +52,7 @@ public class Enemy : MonoBehaviour
         {
             isDead = true;
             enemyState = EnemyState.dead;
+            agent.SetDestination(transform.position);
             yield return new WaitForSeconds(deathTime);
             Destroy(gameObject);
         }
@@ -70,6 +71,7 @@ public class Enemy : MonoBehaviour
 
     public void Chase()
     {
+        if (enemyState == EnemyState.dead) return;
         if (enemyState != EnemyState.chase) return;
         agent.SetDestination(target.position);
         FindFacingDirection();
@@ -77,6 +79,7 @@ public class Enemy : MonoBehaviour
 
     public void Patrol(Vector3 desiredPos)
     {
+        if (enemyState == EnemyState.dead) return;
         if (enemyState != EnemyState.patrol) return;
         FindNextPatrolSpot();
         if (agent.CalculatePath(desiredPos, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
