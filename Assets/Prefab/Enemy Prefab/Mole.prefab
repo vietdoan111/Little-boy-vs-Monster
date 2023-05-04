@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 8410670942509182312}
   - component: {fileID: 6116894099290914972}
   - component: {fileID: 9027439426811102329}
-  m_Layer: 0
+  - component: {fileID: 6217962060000636975}
+  - component: {fileID: 7029682303846030034}
+  m_Layer: 10
   m_Name: Mole
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -145,12 +147,62 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 5
+  m_LinearDrag: 0.1
+  m_AngularDrag: 0.2
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!195 &6217962060000636975
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605603278545357045}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.75
+  m_Speed: 3
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 0
+  m_AutoRepath: 1
+  m_Height: 1.5
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &7029682303846030034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605603278545357045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ce942abe388fa499bf5636ebc113fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  health: 3
+  lookRadius: 3
+  enemyState: 0
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  agent: {fileID: 0}
+  nextPatrolPos: {x: 0, y: 0, z: 0}
+  maxPatrolDis: 3
+  maxWaitTime: 3
+  waitTime: 0
+  startPos: {x: 0, y: 0}
+  movement: {x: 0, y: 0, z: 0}
+  isMoving: 0
+  deathTime: 0
+  isDead: 0

@@ -22,13 +22,13 @@ public class Arrow : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        player = FindObjectOfType<Player>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     void FixedUpdate()
     {
-        waitTime += Time.deltaTime;
-        if (waitTime > maxFlyingTime)
+        waitTime += Time.fixedDeltaTime;
+        if (waitTime > maxFlyingTime && waitTime < maxAppearingTime)
         {
             Debug.Log("arrow grounded");
             rb.velocity = Vector2.zero;
@@ -52,6 +52,21 @@ public class Arrow : MonoBehaviour
             state = ArrowState.grounded;
             Enemy enemy = collision.collider.GetComponent<Enemy>();
             enemy.TakeDamage(transform.position);
+        }
+
+        if (collision.collider.CompareTag("Arrow"))
+        {
+            Debug.Log("arrow grounded");
+            rb.velocity = Vector2.zero;
+            state = ArrowState.grounded;
+            Destroy(gameObject);
+            player.arrowNum++;
+            Debug.Log("arrow num: " + player.arrowNum);
+        }
+
+        if (collision.collider.CompareTag("Fire"))
+        {
+            Destroy(collision.gameObject);
         }
     }
 }

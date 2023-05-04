@@ -150,3 +150,4 @@ MonoBehaviour:
   maxFlyingTime: 0.5
   maxAppearingTime: 5
   rb: {fileID: 0}
+  state: 0

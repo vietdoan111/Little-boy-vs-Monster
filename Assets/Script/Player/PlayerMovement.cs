@@ -105,7 +105,7 @@ public class PlayerMovement : Player
         Debug.Log("arrow num when shoot: " + arrowNum);
         GameObject arrow = Instantiate(bulletPrefab, firePointStart, firePoint.rotation);
         Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * arrowForce, ForceMode2D.Impulse);
+        rb.velocity = arrowForce * firePoint.up;
     }
 
     private IEnumerator ShootingCo()

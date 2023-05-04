@@ -34,12 +34,20 @@ public class Player : MonoBehaviour
             arrowNum++;
         }
 
-        if (collision.collider.CompareTag("Enemy"))
+        if (collision.collider.CompareTag("Enemy")) Stagger(collision);
+
+        if (collision.collider.CompareTag("Fire"))
         {
-            if (state == PlayerState.stagger) return;
-            Vector3 enemyWeapPos = collision.transform.position;
-            StartCoroutine(PlayerTakeDmgCo(enemyWeapPos));
+            Stagger(collision);
+            Destroy(collision.gameObject);
         }
+    }
+
+    public void Stagger(Collision2D collision)
+    {
+        if (state == PlayerState.stagger) return;
+        Vector3 enemyWeapPos = collision.transform.position;
+        StartCoroutine(PlayerTakeDmgCo(enemyWeapPos));
     }
 
     public IEnumerator PlayerTakeDmgCo(Vector3 enemyWeapPos)
