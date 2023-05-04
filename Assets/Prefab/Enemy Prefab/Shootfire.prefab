@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7103044470505425444}
   - component: {fileID: 3942482172366102699}
   - component: {fileID: 3743174842730813343}
+  - component: {fileID: 91443628209039739}
+  - component: {fileID: 5385116873158047437}
   m_Layer: 11
   m_Name: Shootfire
   m_TagString: Fire
@@ -26,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2971496562323684356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.66, y: -0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -111,3 +113,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.51833034, y: 0.5579634}
   m_EdgeRadius: 0
+--- !u!50 &91443628209039739
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2971496562323684356}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &5385116873158047437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2971496562323684356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ec8acb9d1573f44b70e9f684c5b5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxFlyingTime: 1.5
+  maxAppearingTime: 5
+  rb: {fileID: 0}

@@ -74,6 +74,7 @@ public class Enemy : MonoBehaviour
     {
         if (enemyState == EnemyState.dead) return;
         if (enemyState != EnemyState.chase) return;
+        agent.isStopped = false;
         agent.SetDestination(target.position);
         FindFacingDirection();
     }
@@ -82,6 +83,7 @@ public class Enemy : MonoBehaviour
     {
         if (enemyState == EnemyState.dead) return;
         if (enemyState != EnemyState.patrol) return;
+        agent.isStopped = false;
         FindNextPatrolSpot();
         if (agent.CalculatePath(desiredPos, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
         {

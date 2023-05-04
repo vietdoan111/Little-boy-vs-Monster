@@ -9884,6 +9884,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 394832063}
     m_Modifications:
+    - target: {fileID: 5037935286290745099, guid: fab266e2cf107c649aaad3e899401bc0, type: 3}
+      propertyPath: lookRadius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037935286290745099, guid: fab266e2cf107c649aaad3e899401bc0, type: 3}
+      propertyPath: attackRange
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037935286290745099, guid: fab266e2cf107c649aaad3e899401bc0, type: 3}
+      propertyPath: timeBetweenShot
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5037935286290745136, guid: fab266e2cf107c649aaad3e899401bc0, type: 3}
       propertyPath: m_RootOrder
       value: 2

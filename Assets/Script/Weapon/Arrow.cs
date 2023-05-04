@@ -63,5 +63,10 @@ public class Arrow : MonoBehaviour
             player.arrowNum++;
             Debug.Log("arrow num: " + player.arrowNum);
         }
+
+        if (collision.collider.CompareTag("Fire"))
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

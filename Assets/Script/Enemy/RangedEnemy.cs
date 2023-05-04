@@ -9,6 +9,7 @@ public class RangedEnemy : Enemy
     public float timeBetweenShot;
     public float attackRange;
     public float retreatRange;
+    public float projectileSpeed;
 
     float nextShotTime;
 
@@ -36,7 +37,7 @@ public class RangedEnemy : Enemy
         CheckState();
         Patrol(nextPatrolPos);
         Chase();
-        Shoot();
+        ShootFire();
         Retreat();
         Animate();
     }
@@ -49,22 +50,30 @@ public class RangedEnemy : Enemy
         animator.SetBool("IsDead", isDead);
     }
 
-    void Shoot()
+    void ShootFire()
     {
         if (enemyState != EnemyState.attack) return;
         agent.isStopped = true;
         if (Time.time > nextShotTime)
         {
             nextShotTime = Time.time + timeBetweenShot;
-            Instantiate(projectile, transform.position, Quaternion.identity);
+            MoveProjectile();
         }
+    }
+
+    void MoveProjectile()
+    {
+        GameObject fire = Instantiate(projectile, transform.position, Quaternion.identity);
+        Rigidbody2D projectileRb = fire.GetComponent<Rigidbody2D>();
+        Vector2 direction = target.position - transform.position;
+        projectileRb.velocity = projectileSpeed * direction.normalized;
     }
 
     public void Retreat()
     {
         if (enemyState != EnemyState.retreat) return;
         agent.isStopped = true;
-        transform.position = Vector2.MoveTowards(transform.position, target.position, -agent.speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, target.position, -2.0f * Time.deltaTime);
 
     }
 
