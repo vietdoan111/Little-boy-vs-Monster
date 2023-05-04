@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class MeleeEnemy : Enemy
 {
+    Vector2 direction;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class MeleeEnemy : Enemy
         if (enemyState == EnemyState.stagger) return;
         enemyState = EnemyState.patrol;
         if (!isMoving) waitTime += Time.deltaTime;
-        if (CheckDis()) enemyState = EnemyState.chase;
+        if (CheckDis(lookRadius)) enemyState = EnemyState.chase;
         Patrol(nextPatrolPos);
         Chase();
         Animate();
@@ -34,8 +36,9 @@ public class MeleeEnemy : Enemy
 
     void Animate()
     {
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
+        if (!movement.Equals(Vector2.zero)) direction = movement; 
+        animator.SetFloat("Horizontal", direction.x);
+        animator.SetFloat("Vertical", direction.y);
         isMoving = false;
         if (agent.desiredVelocity.sqrMagnitude > 0.01f) isMoving = true;
         animator.SetBool("IsMoving", isMoving);

@@ -43,6 +43,7 @@ public class Enemy : MonoBehaviour
     public IEnumerator TakeDmgCo(Vector3 weaponPos)
     {
         enemyState = EnemyState.stagger;
+        agent.isStopped = true;
         Vector2 direction = weaponPos - transform.position;
         rb.velocity = -direction * 15f;
         yield return new WaitForSeconds(0.1f);
@@ -52,10 +53,10 @@ public class Enemy : MonoBehaviour
         {
             isDead = true;
             enemyState = EnemyState.dead;
-            agent.SetDestination(transform.position);
             yield return new WaitForSeconds(deathTime);
             Destroy(gameObject);
         }
+        else agent.isStopped = false;
         enemyState = EnemyState.patrol;
     }
 
@@ -89,10 +90,10 @@ public class Enemy : MonoBehaviour
         FindFacingDirection();
     }
 
-    public bool CheckDis()
+    public bool CheckDis(float actionRange)
     {
         if (enemyState == EnemyState.stagger) return false;
-        if (Vector2.Distance(transform.position, target.position) > lookRadius) return false;
+        if (Vector2.Distance(transform.position, target.position) > actionRange) return false;
         return true;
     }
 
