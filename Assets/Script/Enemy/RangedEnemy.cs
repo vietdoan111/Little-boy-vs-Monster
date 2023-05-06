@@ -64,9 +64,8 @@ public class RangedEnemy : Enemy
     void MoveProjectile()
     {
         GameObject fire = Instantiate(projectile, transform.position, Quaternion.identity);
-        Rigidbody2D projectileRb = fire.GetComponent<Rigidbody2D>();
-        Vector2 direction = target.position - transform.position;
-        projectileRb.velocity = projectileSpeed * direction.normalized;
+        EnemyProjectile prjTile = fire.GetComponent<EnemyProjectile>();
+        prjTile.targetPos = target.position;
     }
 
     public void Retreat()
