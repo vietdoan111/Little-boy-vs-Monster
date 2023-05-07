@@ -17,14 +17,6 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public PlayerState state;
 
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        animator.SetFloat("Horizontal", 0);
-        animator.SetFloat("Vertical", 1);
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Arrow"))

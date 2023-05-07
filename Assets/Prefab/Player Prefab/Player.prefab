@@ -159,6 +159,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3434963068405086867, guid: 3e0e7d7cf5327b546a35b9ee70361ebc, type: 3}
   sword: {fileID: 5889826231859507877}
   arrowForce: 20
+  startPos: {fileID: 11400000, guid: cf1c7d94245e4a64aa7296945a2c5ee7, type: 2}
 --- !u!95 &5174156064755076329
 Animator:
   serializedVersion: 4

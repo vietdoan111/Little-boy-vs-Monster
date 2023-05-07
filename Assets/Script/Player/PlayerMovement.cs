@@ -9,6 +9,7 @@ public class PlayerMovement : Player
     public GameObject bulletPrefab;
     public Sword sword;
     public float arrowForce = 20f;
+    public VectorValue startPos;
 
 
     float horizontalDir, verticalDir;
@@ -20,6 +21,15 @@ public class PlayerMovement : Player
     bool isShooting;
     bool isMelee;
     Vector3 firePointStart;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        animator.SetFloat("Horizontal", 0);
+        animator.SetFloat("Vertical", 1);
+        transform.position = startPos.initialValue;
+    }
 
     // Update is called once per frame
     void Update()
