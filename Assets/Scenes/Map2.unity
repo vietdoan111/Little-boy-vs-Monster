@@ -197,6 +197,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3649354993672354584, guid: 5cfeec509ca358343b1b0835281c3843, type: 3}
   m_PrefabInstance: {fileID: 411292676}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1186718207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1186718208}
+  - component: {fileID: 1186718209}
+  m_Layer: 0
+  m_Name: Flock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1186718208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186718207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1804159897}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1186718209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186718207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37f29b20cbfaeb4dbd22744eb615445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentPrefab: {fileID: 484275696638474022, guid: 95c5b3d640345804b864664a0aa5c508, type: 3}
+  behavior: {fileID: 0}
+  startCount: 4
+  driveFactor: 10
+  maxSpeed: 5
+  neighborRadius: 2.5
+  avoidanceRadiusMultiplier: 0.5
 --- !u!1001 &1530794969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -357,7 +408,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f8e86b4511919584c99a686e4c29216e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11640,6 +11691,7 @@ Transform:
   m_Children:
   - {fileID: 1530794970}
   - {fileID: 1792758036}
+  - {fileID: 1186718208}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

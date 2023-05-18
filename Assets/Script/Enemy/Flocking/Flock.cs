@@ -8,9 +8,9 @@ public class Flock : MonoBehaviour
     List<FlockAgent> agents = new List<FlockAgent>();
     public FlockBehavior behavior;
 
-    [Range(10, 500)]
+    [Range(1, 500)]
     public int startCount = 250;
-    const float agentDensity = 0.08f;
+    const float agentDensity = 0.9f;
 
     [Range(1f, 100f)]
     public float driveFactor = 10f;
@@ -49,6 +49,29 @@ public class Flock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        foreach (FlockAgent agent in agents)
+        {
+            List<Transform> context = GetNearbyObject(agent);
+
+            //debug check neighbor
+            agent.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.blue, context.Count / 6f);
+
+            /*Vector2 move = behavior.CalculateMove(agent, context, this);
+            move *= driveFactor;
+            if (move.sqrMagnitude > squareMaxSpeed) move = move.normalized * maxSpeed;
+            agent.Move(move);*/
+        }
+    }
+    
+    List<Transform> GetNearbyObject(FlockAgent agent)
+    {
+        List<Transform> context = new List<Transform>();
+        Collider2D[] contextCollider = Physics2D.OverlapCircleAll(agent.transform.position, neighborRadius);
+        foreach(Collider2D collider in contextCollider)
+        {
+            if (collider != agent.AgentCollider) context.Add(collider.transform);
+        }
+
+        return context;
     }
 }
