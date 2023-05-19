@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 112
+  controlID: 25
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 500, y: 200}
   m_MaxSize: {x: 40480, y: 16192}
   vertical: 0
-  controlID: 44
+  controlID: 106
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 111
+  controlID: 24
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -645,22 +645,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefab/Test Prefab
+    - Assets/Script/Enemy/Flocking/Behavior Object
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 78
   m_LastFolders:
-  - Assets/Prefab/Test Prefab
+  - Assets/Script/Enemy/Flocking/Behavior Object
   m_LastFoldersGridSize: 78
   m_LastProjectPath: "G:\\School Project\\\u0110\u1ED3 \xE1n\\Zelda-like-Game"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 85.400024}
-    m_SelectedIDs: 486a0000
-    m_LastClickedID: 27208
-    m_ExpandedIDs: 00000000146a0000166a0000186a00001a6a00001c6a00001e6a0000206a0000226a0000246a0000266a0000286a00002a6a00002c6a00002e6a000000ca9a3b
+    scrollPos: {x: 0, y: 240.40033}
+    m_SelectedIDs: f86d0000
+    m_LastClickedID: 28152
+    m_ExpandedIDs: 00000000146a0000166a0000186a00001a6a00001c6a00001e6a0000206a0000226a0000246a0000266a0000286a00002a6a00002c6a00002e6a0000d86d0000e26d0000ec6d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -715,7 +715,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1019,9 +1019,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.2810931, y: -2.6310277, z: -0.04857197}
+    m_Target: {x: -4.188503, y: -5.515433, z: -0.10248821}
     speed: 2
-    m_Value: {x: 1.2810931, y: -2.6310277, z: -0.04857197}
+    m_Value: {x: -4.188503, y: -5.515433, z: -0.10248821}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1072,9 +1072,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.11753
+    m_Target: 13.226595
     speed: 2
-    m_Value: 8.11753
+    m_Value: 13.226595
   m_Ortho:
     m_Target: 1
     speed: 2
