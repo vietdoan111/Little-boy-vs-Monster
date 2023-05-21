@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48ca95bb69d7f0646bd89134f5ff69b7, type: 3}
-  m_Name: Composite
+  m_Name: CompositeWithTargeting
   m_EditorClassIdentifier: 
   behaviors:
   - {fileID: 11400000, guid: 0b0b78f4009ae5843b4bc6741a05e067, type: 2}
@@ -21,4 +21,4 @@ MonoBehaviour:
   - 2
   - 2
   - 4
-  - 2
+  - 4
