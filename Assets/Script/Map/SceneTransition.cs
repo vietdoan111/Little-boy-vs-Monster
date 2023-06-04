@@ -13,8 +13,17 @@ public class SceneTransition : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Player player = collision.GetComponent<Player>();
             playerStorage.initialValue = playerPosition;
+            player.transform.position = playerStorage.initialValue;
+            SaveGame(player);
+            
             SceneManager.LoadScene(sceneToLoad);
         }
+    }
+
+    public void SaveGame(Player player)
+    {
+        SaveSystem.SavePlayer(player, this);
     }
 }
