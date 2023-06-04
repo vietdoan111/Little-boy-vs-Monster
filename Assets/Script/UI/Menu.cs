@@ -27,4 +27,15 @@ public class Menu : MonoBehaviour
     {
         audioMixer.SetFloat("volumn", vol);
     }
+
+    public void LoadGame()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        startPos.defaultValue.x = data.position[0];
+        startPos.defaultValue.y = data.position[1];
+        startPos.initialValue = startPos.defaultValue;
+
+        SceneManager.LoadScene(data.map);
+    }
 }
