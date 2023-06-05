@@ -8,20 +8,20 @@ public class FlockAgent : MonoBehaviour
     Collider2D agentCollider;
     public Collider2D AgentCollider { get { return agentCollider; } }
     public Animator animator;
+    public Transform spriteTrans;
 
     // Start is called before the first frame update
     void Start()
     {
         agentCollider = GetComponent<Collider2D>();
-        animator = GetComponent<Animator>();
     }
 
     public void Move(Vector2 velocity)
     {
-        //for demo direction
         transform.up = velocity;
-
         transform.position += (Vector3)velocity * Time.deltaTime;
+        spriteTrans.localEulerAngles = -transform.eulerAngles;
+
 
         if (animator != null)
         {
