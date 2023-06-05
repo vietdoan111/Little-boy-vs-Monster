@@ -5,25 +5,29 @@ using UnityEngine;
 public class Flock : MonoBehaviour
 {
     public FlockAgent agentPrefab;
-    List<FlockAgent> agents = new List<FlockAgent>();
+    [HideInInspector]
+    public List<FlockAgent> agents = new List<FlockAgent>();
     public FlockBehavior behavior;
 
     [Range(1, 500)]
     public int startCount = 250;
-    const float agentDensity = 0.3f;
+    public float agentDensity = 0.3f;
 
     [Range(1f, 100f)]
     public float driveFactor = 10f;
     [Range(0f, 100f)]
     public float maxSpeed = 5.0f;
-    [Range(1f, 10f)]
+    [Range(0f, 10f)]
     public float neighborRadius = 1.5f;
     [Range(0f, 5f)]
     public float avoidanceRadiusMultiplier = 0.5f;
 
-    float squareMaxSpeed;
-    float squareNeighborRadius;
-    float squareAvoidanceRadius;
+    [HideInInspector]
+    public float squareMaxSpeed;
+    [HideInInspector]
+    public float squareNeighborRadius;
+    [HideInInspector]
+    public float squareAvoidanceRadius;
     public float SquareAvoidanceRadius { get { return squareAvoidanceRadius; } }
 
     // Start is called before the first frame update
@@ -64,7 +68,7 @@ public class Flock : MonoBehaviour
         }
     }
     
-    List<Transform> GetNearbyObject(FlockAgent agent)
+    public List<Transform> GetNearbyObject(FlockAgent agent)
     {
         List<Transform> context = new List<Transform>();
         Collider2D[] contextCollider = Physics2D.OverlapCircleAll(agent.transform.position, neighborRadius);
