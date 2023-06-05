@@ -1,0 +1,838 @@
+fileFormatVersion: 2
+guid: 90e0005f014389545965b319de9dd137
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 127
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c8d4dcbdb3ab042a98d7839fc351c2
+      internalID: 1215376800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 127
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce57220206e25614bb15ac9bef302e6a
+      internalID: -152554219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_2
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 127
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7e23724d9919041b6ddab7aa37a097
+      internalID: 99228158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_3
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 127
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bfd52dc16f48b5418a55a345d389455
+      internalID: 56941028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_4
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 127
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51729529b4c10694f8a5efb5d7dc196b
+      internalID: 412955396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_5
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 127
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0386b53d63d8834c8897dc298de7339
+      internalID: 843627114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_6
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 127
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6ead5b8542e7e4cb2b0385c8ffc093
+      internalID: -490709418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_7
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 127
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367b6867edd74f74eaa81db7528e45a4
+      internalID: -215326198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_8
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 95
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b91773619ecff5a46b3c8490a302107a
+      internalID: -375843118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_9
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 95
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a79b6d0647f114bb9789f18e90e318
+      internalID: -977257330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_10
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 95
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a555572c8eeea634cb96e0a10cc247f7
+      internalID: 1129815798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_11
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 95
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c516c79f6638f4419c396c3e3bb13a7
+      internalID: 1344700305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_12
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 95
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0485266aa87cf047988b8904f36d4fd
+      internalID: 1950704906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_13
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 95
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9f214428103b94ebb45c9d52f4aead
+      internalID: -1434726650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_14
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 95
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33a59cd4d28dd144e9b12cdfdab6b5e4
+      internalID: 334291921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_15
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 95
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b26333160d897e4dbf1a5533680b2a9
+      internalID: -2008131390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_16
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 63
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea93424fcd1ba0f4484ba57b22dd8ad4
+      internalID: -1398063508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_17
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 63
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39bfe3ae7f729444fa9b454211864bd3
+      internalID: 783503218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_18
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 63
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac9629c2c733f14c87fd654e38df9a5
+      internalID: 436900849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_19
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 63
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc018eb6618cbbf4a8027978a3b2e057
+      internalID: 329832082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_20
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 63
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7bebcf6fe7a81046ac13b4bcfaccb36
+      internalID: -102572350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_21
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 63
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceb3873ed07b2714a8acd5cc226c00a4
+      internalID: -2086675095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_22
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 31
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f144f2c78a6ed7a4fa7787878fff5b44
+      internalID: -1563760664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_23
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 31
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48fe059aa4c176d42bbdaf716d68fae2
+      internalID: -237336686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_24
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 31
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f08e573353a594ab977e30544ea7da
+      internalID: 127207711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_25
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 31
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 108dddd32d564da4b855b4ed05cedefa
+      internalID: 1926339752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44d87c2aee24db446881cd4c968c97b8
+      internalID: -890636243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_27
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 0
+        width: 29
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6acd3a60489aeca498a36006af20622e
+      internalID: 1626962709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_28
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 0
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b397200f53d34ce4f929cc8a0dd6c452
+      internalID: 761444585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_29
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 0
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5613c7c239f0d1c4588b2cf77053cfc6
+      internalID: 1075051332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_30
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 0
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ab2046f76ff964e81d7ae9dfc66e4f
+      internalID: -687324218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cobra Sprite Sheet (left)_31
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 0
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca1ddb8143c37ac4aa05fdcef5c68b41
+      internalID: 1947549445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Cobra Sprite Sheet (left)_22: -1563760664
+      Cobra Sprite Sheet (left)_17: 783503218
+      Cobra Sprite Sheet (left)_5: 843627114
+      Cobra Sprite Sheet (left)_7: -215326198
+      Cobra Sprite Sheet (left)_18: 436900849
+      Cobra Sprite Sheet (left)_11: 1344700305
+      Cobra Sprite Sheet (left)_26: -890636243
+      Cobra Sprite Sheet (left)_21: -2086675095
+      Cobra Sprite Sheet (left)_28: 761444585
+      Cobra Sprite Sheet (left)_12: 1950704906
+      Cobra Sprite Sheet (left)_13: -1434726650
+      Cobra Sprite Sheet (left)_15: -2008131390
+      Cobra Sprite Sheet (left)_27: 1626962709
+      Cobra Sprite Sheet (left)_1: -152554219
+      Cobra Sprite Sheet (left)_24: 127207711
+      Cobra Sprite Sheet (left)_30: -687324218
+      Cobra Sprite Sheet (left)_8: -375843118
+      Cobra Sprite Sheet (left)_0: 1215376800
+      Cobra Sprite Sheet (left)_4: 412955396
+      Cobra Sprite Sheet (left)_31: 1947549445
+      Cobra Sprite Sheet (left)_6: -490709418
+      Cobra Sprite Sheet (left)_23: -237336686
+      Cobra Sprite Sheet (left)_25: 1926339752
+      Cobra Sprite Sheet (left)_14: 334291921
+      Cobra Sprite Sheet (left)_29: 1075051332
+      Cobra Sprite Sheet (left)_3: 56941028
+      Cobra Sprite Sheet (left)_2: 99228158
+      Cobra Sprite Sheet (left)_19: 329832082
+      Cobra Sprite Sheet (left)_20: -102572350
+      Cobra Sprite Sheet (left)_9: -977257330
+      Cobra Sprite Sheet (left)_10: 1129815798
+      Cobra Sprite Sheet (left)_16: -1398063508
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
