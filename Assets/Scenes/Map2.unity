@@ -18114,14 +18114,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 451846727}
     m_Modifications:
-    - target: {fileID: 412353736, guid: 0e2765e3674628b4499215b2455f1b13, type: 3}
-      propertyPath: startCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 412353736, guid: 0e2765e3674628b4499215b2455f1b13, type: 3}
-      propertyPath: timeBetweenSpawn
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 68728722720266819, guid: 0e2765e3674628b4499215b2455f1b13, type: 3}
       propertyPath: m_RootOrder
       value: 0
