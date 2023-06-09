@@ -47,20 +47,18 @@ public class Monument : Flock
         if (Time.time > nextSpawnTime)
         {
             nextSpawnTime = Time.time + timeBetweenSpawn;
-            if (agents.Count > maxSpawnNum) return;
-        }
+            for (int i = 0; i < spawnNum; i++)
+            {
+                if (agents.Count > maxSpawnNum) break;
+                FlockAgent agent = Instantiate(
+                    agentPrefab,
+                    Random.insideUnitCircle * spawnNum * agentDensity,
+                    Quaternion.identity,
+                    transform
+                    );
 
-        for (int i = 0; i < spawnNum; i++)
-        {
-            if (agents.Count > maxSpawnNum) break;
-            FlockAgent agent = Instantiate(
-                agentPrefab,
-                Random.insideUnitCircle * startCount * agentDensity,
-                Quaternion.identity,
-                transform
-                );
-
-            agents.Add(agent);
+                agents.Add(agent);
+            }
         }
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 68728722720266819}
   - component: {fileID: 3288161987101002423}
   - component: {fileID: 4949435171289251396}
+  - component: {fileID: 412353736}
   m_Layer: 0
   m_Name: Monument of the serpent god
   m_TagString: Untagged
@@ -106,3 +107,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &412353736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190470467420650222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd6b2033889a064eb384b5296f1af1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentPrefab: {fileID: 4439739923062134938, guid: 1f997f61016e0374f9e0aa475d0df8cc, type: 3}
+  agents: []
+  behavior: {fileID: 11400000, guid: 7456b91c20967c841a43285f29f9d6bc, type: 2}
+  startCount: 1
+  agentDensity: 0.2
+  driveFactor: 10
+  maxSpeed: 4
+  neighborRadius: 1
+  avoidanceRadiusMultiplier: 0.5
+  squareMaxSpeed: 0
+  squareNeighborRadius: 0
+  squareAvoidanceRadius: 0
+  spawnNum: 2
+  maxSpawnNum: 20
+  timeBetweenSpawn: 8

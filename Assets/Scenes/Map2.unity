@@ -285,38 +285,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3649354993672354584, guid: 5cfeec509ca358343b1b0835281c3843, type: 3}
   m_PrefabInstance: {fileID: 411292676}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &412353735 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6190470467420650222, guid: 0e2765e3674628b4499215b2455f1b13, type: 3}
-  m_PrefabInstance: {fileID: 131487623561793156}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &412353736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412353735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fd6b2033889a064eb384b5296f1af1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agentPrefab: {fileID: 4439739923062134938, guid: 1f997f61016e0374f9e0aa475d0df8cc, type: 3}
-  agents: []
-  behavior: {fileID: 11400000, guid: 7456b91c20967c841a43285f29f9d6bc, type: 2}
-  startCount: 8
-  agentDensity: 0.2
-  driveFactor: 10
-  maxSpeed: 4
-  neighborRadius: 1
-  avoidanceRadiusMultiplier: 0.5
-  squareMaxSpeed: 0
-  squareNeighborRadius: 0
-  squareAvoidanceRadius: 0
-  spawnNum: 2
-  maxSpawnNum: 20
-  timeBetweenSpawn: 10
 --- !u!4 &412353739 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 68728722720266819, guid: 0e2765e3674628b4499215b2455f1b13, type: 3}
