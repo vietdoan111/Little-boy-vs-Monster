@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3288161987101002423}
   - component: {fileID: 4949435171289251396}
   - component: {fileID: 412353736}
+  - component: {fileID: 7828715766623188739}
   m_Layer: 10
   m_Name: Monument of the serpent god
-  m_TagString: Enemy
+  m_TagString: FlockHead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +132,50 @@ MonoBehaviour:
   squareMaxSpeed: 0
   squareNeighborRadius: 0
   squareAvoidanceRadius: 0
+  health: 20
   spawnNum: 2
   maxSpawnNum: 20
   timeBetweenSpawn: 8
+  lookRadius: 10
+  target: {fileID: 0}
+  behaviors:
+  - {fileID: 11400000, guid: 7456b91c20967c841a43285f29f9d6bc, type: 2}
+  - {fileID: 11400000, guid: c8d773a32e48b4649af4b49dac5efa2a, type: 2}
+  state: 0
+  rb: {fileID: 4949435171289251396}
+--- !u!60 &7828715766623188739
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190470467420650222}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.3125, y: 5.625}
+    newSize: {x: 6.3125, y: 5.625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.53125, y: 2.75}
+      - {x: -1.40625, y: 0.9375}
+      - {x: -2.53125, y: 0.125}
+      - {x: -2.65625, y: -1.25}
+      - {x: -1.40625, y: -2.375}
+      - {x: 0.09375, y: -2.6875}
+      - {x: 1.65625, y: -2.375}
+      - {x: 2.65625, y: -1.3125}
+      - {x: 2.65625, y: 0.0625}
+      - {x: 1.21875, y: 0.875}
+      - {x: 0.53125, y: 2.75}

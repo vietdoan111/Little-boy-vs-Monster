@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum MonumnentState
+public enum MonumentState
 {
     idle,
     stagger,
@@ -11,9 +11,16 @@ public enum MonumnentState
 
 public class Monument : Flock
 {
+    public int health;
     public int spawnNum;
     public int maxSpawnNum;
     public float timeBetweenSpawn = 10.0f;
+    public float lookRadius;
+    public Transform target;
+    public FlockBehavior[] behaviors;
+    public MonumentState state;
+    public Rigidbody2D rb;
+
     float nextSpawnTime;
 
     // Start is called before the first frame update
@@ -22,6 +29,7 @@ public class Monument : Flock
         squareMaxSpeed = maxSpeed * maxSpeed;
         squareNeighborRadius = neighborRadius * neighborRadius;
         squareAvoidanceRadius = squareNeighborRadius * avoidanceRadiusMultiplier * avoidanceRadiusMultiplier;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
 
         for (int i = 0; i < startCount; i++)
         {
@@ -39,6 +47,8 @@ public class Monument : Flock
     // Update is called once per frame
     void Update()
     {
+        rb.velocity = Vector2.zero;
+
         foreach (FlockAgent agent in agents)
         {
             if (agent == null)
@@ -54,6 +64,7 @@ public class Monument : Flock
             agent.Move(move);
         }
 
+        if (state != MonumentState.attack) return;
         //spawn new
         if (Time.time > nextSpawnTime)
         {
@@ -71,5 +82,21 @@ public class Monument : Flock
                 agents.Add(agent);
             }
         }
+    }
+
+    public void TakeDamage()
+    {
+        if (state == MonumentState.stagger) return;
+        StartCoroutine(TakeDmgCo());
+    }
+
+    public IEnumerator TakeDmgCo()
+    {
+        state = MonumentState.stagger;
+        yield return new WaitForSeconds(0.1f);
+        health--;
+        rb.velocity = Vector2.zero;
+        if (health <= 0) Destroy(gameObject);
+        state = MonumentState.attack;
     }
 }

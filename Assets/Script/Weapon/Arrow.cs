@@ -77,5 +77,14 @@ public class Arrow : MonoBehaviour
             FlockAgent agent = collision.collider.GetComponent<FlockAgent>();
             agent.TakeDamage(transform.position);
         }
+
+        if (collision.collider.CompareTag("FlockHead"))
+        {
+            if (state == ArrowState.grounded) return;
+            rb.velocity = Vector2.zero;
+            state = ArrowState.grounded;
+            Monument monument = collision.collider.GetComponent<Monument>();
+            monument.TakeDamage();
+        }
     }
 }
