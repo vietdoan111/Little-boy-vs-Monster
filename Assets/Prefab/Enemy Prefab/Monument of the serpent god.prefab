@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3288161987101002423}
   - component: {fileID: 4949435171289251396}
   - component: {fileID: 412353736}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Monument of the serpent god
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

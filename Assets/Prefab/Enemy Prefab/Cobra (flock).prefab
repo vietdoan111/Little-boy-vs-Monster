@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1911369945460032709}
   - component: {fileID: 390319215345124501}
   - component: {fileID: 4439739923062134938}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cobra (flock)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 1653408626571369583}
   - component: {fileID: 1648967282540493216}
   - component: {fileID: 18233789591988902}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
