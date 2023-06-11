@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum MonumnentState
+{
+    idle,
+    stagger,
+    attack
+}
+
 public class Monument : Flock
 {
     public int spawnNum;
@@ -20,7 +27,7 @@ public class Monument : Flock
         {
             FlockAgent agent = Instantiate(
                 agentPrefab,
-                Random.insideUnitCircle * startCount * agentDensity,
+                (Vector2)transform.position + Random.insideUnitCircle * startCount * agentDensity,
                 Quaternion.identity,
                 transform
                 );
@@ -34,6 +41,10 @@ public class Monument : Flock
     {
         foreach (FlockAgent agent in agents)
         {
+            if (agent == null)
+            {
+                continue;
+            }
             List<Transform> context = GetNearbyObject(agent);
 
             //move
@@ -52,7 +63,7 @@ public class Monument : Flock
                 if (agents.Count > maxSpawnNum) break;
                 FlockAgent agent = Instantiate(
                     agentPrefab,
-                    Random.insideUnitCircle * spawnNum * agentDensity,
+                    (Vector2)transform.position + Random.insideUnitCircle * spawnNum * agentDensity,
                     Quaternion.identity,
                     transform
                     );

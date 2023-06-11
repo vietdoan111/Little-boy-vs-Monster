@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4439739923062134938}
   m_Layer: 10
   m_Name: Cobra (flock)
-  m_TagString: Enemy
+  m_TagString: Flock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,6 +96,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 18233789591988902}
   spriteTrans: {fileID: 1653408626571369583}
+  agentState: 0
+  rb: {fileID: 390319215345124501}
+  health: 1
+  deathTime: 0.5
 --- !u!1 &5025337205548000046
 GameObject:
   m_ObjectHideFlags: 0
