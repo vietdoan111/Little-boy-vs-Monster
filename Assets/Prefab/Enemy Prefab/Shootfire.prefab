@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7103044470505425444}
   - component: {fileID: 3942482172366102699}
   - component: {fileID: 3743174842730813343}
-  - component: {fileID: 91443628209039739}
   - component: {fileID: 5385116873158047437}
   m_Layer: 11
   m_Name: Shootfire
@@ -97,7 +96,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.09908354, y: -0.019816697}
@@ -113,27 +112,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.51833034, y: 0.5579634}
   m_EdgeRadius: 0
---- !u!50 &91443628209039739
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2971496562323684356}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!114 &5385116873158047437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,4 +126,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxFlyingTime: 1.5
   maxAppearingTime: 5
-  rb: {fileID: 0}
+  targetPos: {x: 0, y: 0}

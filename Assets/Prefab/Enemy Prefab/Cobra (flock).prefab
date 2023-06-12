@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1911369945460032709}
   - component: {fileID: 390319215345124501}
   - component: {fileID: 4439739923062134938}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cobra (flock)
-  m_TagString: Untagged
+  m_TagString: Flock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -96,6 +96,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 18233789591988902}
   spriteTrans: {fileID: 1653408626571369583}
+  agentState: 0
+  rb: {fileID: 390319215345124501}
+  health: 1
+  deathTime: 0.5
 --- !u!1 &5025337205548000046
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +111,7 @@ GameObject:
   - component: {fileID: 1653408626571369583}
   - component: {fileID: 1648967282540493216}
   - component: {fileID: 18233789591988902}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
