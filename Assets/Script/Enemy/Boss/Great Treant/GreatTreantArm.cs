@@ -40,7 +40,8 @@ public class GreatTreantArm : GreatTreant
             if (Time.time > nextShotTime)
             {
                 nextShotTime = Time.time + TimeBetweenShot;
-                Instantiate(projectile, shootingPos, Quaternion.identity);
+                EnemyProjectile fire = Instantiate(projectile, shootingPos, Quaternion.identity).GetComponent<EnemyProjectile>();
+                fire.targetPos = target.position;
             }
         }
     }

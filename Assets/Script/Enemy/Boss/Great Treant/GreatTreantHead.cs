@@ -40,8 +40,10 @@ public class GreatTreantHead : GreatTreant
             if (Time.time > nextShotTime)
             {
                 nextShotTime = Time.time + TimeBetweenShotEnraged;
-                Instantiate(projectile, transform.position, Quaternion.identity);
-                Instantiate(projectile, secondndShotDir, Quaternion.identity);
+                EnemyProjectile fire = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<EnemyProjectile>();
+                fire.targetPos = target.position;
+                EnemyProjectile fire2 = Instantiate(projectile, secondndShotDir, Quaternion.identity).GetComponent<EnemyProjectile>();
+                fire2.targetPos = target.position;
             }
         }
         
@@ -51,7 +53,8 @@ public class GreatTreantHead : GreatTreant
             if (Time.time > nextShotTime)
             {
                 nextShotTime = Time.time + TimeBetweenShot;
-                Instantiate(projectile, transform.position, Quaternion.identity);
+                EnemyProjectile fire = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<EnemyProjectile>();
+                fire.targetPos = target.position;
             }
         }
     }
