@@ -26,7 +26,8 @@ public class Player : MonoBehaviour
             arrowNum++;
         }
 
-        if (collision.collider.CompareTag("Enemy")) Stagger(collision);
+        if (collision.collider.CompareTag("Enemy") || collision.collider.CompareTag("Flock")
+            || collision.collider.CompareTag("FlockHead") || collision.collider.CompareTag("Boss")) Stagger(collision);
 
         if (collision.collider.CompareTag("Fire"))
         {

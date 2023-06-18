@@ -9,6 +9,7 @@ TagManager:
   - Fire
   - Flock
   - FlockHead
+  - Boss
   layers:
   - Default
   - TransparentFX
