@@ -127,3 +127,5 @@ MonoBehaviour:
   maxFlyingTime: 1.5
   maxAppearingTime: 5
   targetPos: {x: 0, y: 0}
+  maxNonTriggerTime: 0.5
+  col: {fileID: 3743174842730813343}
