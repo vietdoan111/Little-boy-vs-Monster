@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum PlayerState
 {
@@ -50,7 +51,11 @@ public class Player : MonoBehaviour
         rb.velocity = -direction * 15f;
         yield return new WaitForSeconds(0.1f);
         health--;
-        if (health <= 0) Debug.Log("Lose Game");
+        if (health <= 0)
+        {
+            Debug.Log("Lose Game");
+            SceneManager.LoadScene("StartMenu");
+        }
         rb.velocity = Vector2.zero;
         state = PlayerState.walk;
     }
