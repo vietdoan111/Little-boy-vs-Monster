@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GreatTreantHead : GreatTreant
 {
@@ -58,4 +59,10 @@ public class GreatTreantHead : GreatTreant
             }
         }
     }
+
+    private void OnDestroy()
+    {
+        SceneManager.LoadScene("StartMenu");
+    }
+
 }
