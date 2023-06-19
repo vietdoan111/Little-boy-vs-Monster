@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b60341101acc57419a2e33cb53fc87e, type: 3}
-  m_Name: StayInRadius
+  m_Script: {fileID: 11500000, guid: 76a4b0a690fc5bc4194627d978e825cd, type: 3}
+  m_Name: Obstacle Avoidance
   m_EditorClassIdentifier: 
-  center: {x: -24, y: -1}
-  radius: 10
+  filter: {fileID: 11400000, guid: 58b4c25a1ef238642b1b1eee7657e012, type: 2}
