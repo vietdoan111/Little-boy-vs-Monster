@@ -30,7 +30,7 @@ public class GreatTreant : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         health--;
         rb.velocity = Vector2.zero;
-        if (health <= 0) Destroy(gameObject);
+        if (health < 1) Destroy(gameObject);
         state = GreatTreantState.normal;
     }
 }

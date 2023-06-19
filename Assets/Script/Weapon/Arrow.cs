@@ -86,5 +86,14 @@ public class Arrow : MonoBehaviour
             Monument monument = collision.collider.GetComponent<Monument>();
             monument.TakeDamage();
         }
+
+        if (collision.collider.CompareTag("Boss"))
+        {
+            if (state == ArrowState.grounded) return;
+            rb.velocity = Vector2.zero;
+            state = ArrowState.grounded;
+            GreatTreant GreatTreant = collision.collider.GetComponent<GreatTreant>();
+            GreatTreant.TakeDamage();
+        }
     }
 }

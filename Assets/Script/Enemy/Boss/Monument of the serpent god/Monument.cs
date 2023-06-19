@@ -39,7 +39,7 @@ public class Monument : Flock
                 Quaternion.identity,
                 transform
                 );
-
+            agent.Initialized(this);
             agents.Add(agent);
         }
     }
@@ -78,7 +78,7 @@ public class Monument : Flock
                     Quaternion.identity,
                     transform
                     );
-
+                agent.Initialized(this);
                 agents.Add(agent);
             }
         }
