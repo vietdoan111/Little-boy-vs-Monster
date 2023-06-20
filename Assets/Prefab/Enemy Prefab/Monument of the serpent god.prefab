@@ -134,7 +134,7 @@ MonoBehaviour:
   squareAvoidanceRadius: 0
   health: 20
   spawnNum: 2
-  maxSpawnNum: 20
+  maxSpawnNum: 60
   timeBetweenSpawn: 8
   lookRadius: 10
   target: {fileID: 0}
