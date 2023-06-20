@@ -62,7 +62,7 @@ public class GreatTreantHead : GreatTreant
 
     private void OnDestroy()
     {
-        SceneManager.LoadScene("StartMenu");
+        if(health < 1) SceneManager.LoadScene("StartMenu");
     }
 
 }
