@@ -68,5 +68,32 @@ public class Arrow : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+
+        if (collision.collider.CompareTag("Flock"))
+        {
+            if (state == ArrowState.grounded) return;
+            rb.velocity = Vector2.zero;
+            state = ArrowState.grounded;
+            FlockAgent agent = collision.collider.GetComponent<FlockAgent>();
+            agent.TakeDamage(transform.position);
+        }
+
+        if (collision.collider.CompareTag("FlockHead"))
+        {
+            if (state == ArrowState.grounded) return;
+            rb.velocity = Vector2.zero;
+            state = ArrowState.grounded;
+            Monument monument = collision.collider.GetComponent<Monument>();
+            monument.TakeDamage();
+        }
+
+        if (collision.collider.CompareTag("Boss"))
+        {
+            if (state == ArrowState.grounded) return;
+            rb.velocity = Vector2.zero;
+            state = ArrowState.grounded;
+            GreatTreant GreatTreant = collision.collider.GetComponent<GreatTreant>();
+            GreatTreant.TakeDamage();
+        }
     }
 }

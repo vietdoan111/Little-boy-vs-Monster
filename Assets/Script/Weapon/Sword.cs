@@ -41,10 +41,19 @@ public class Sword : MonoBehaviour
     {
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(swordTip.position, swordRange, -45.0f, enemyMask);
 
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D hit in hitEnemies)
         {
-            Enemy monster = enemy.GetComponent<Enemy>();
-            if (monster != null) monster.TakeDamage(swordTip.position);
+            Enemy enemy = hit.GetComponent<Enemy>();
+            if (enemy != null) enemy.TakeDamage(swordTip.position);
+
+            FlockAgent agent = hit.GetComponent<FlockAgent>();
+            if (agent != null) agent.TakeDamage(swordTip.position);
+
+            Monument monument = hit.GetComponent<Monument>();
+            if (monument != null) monument.TakeDamage();
+
+            GreatTreant greatTreant = hit.GetComponent<GreatTreant>();
+            if (greatTreant != null) greatTreant.TakeDamage();
         }
     }
 }

@@ -7,6 +7,9 @@ TagManager:
   - Arrow
   - Enemy
   - Fire
+  - Flock
+  - FlockHead
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -20,7 +23,7 @@ TagManager:
   - 
   - Enemy
   - Fire
-  - 
+  - Obstacle
   - 
   - 
   - 
