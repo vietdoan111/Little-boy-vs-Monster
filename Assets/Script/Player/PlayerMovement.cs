@@ -29,6 +29,7 @@ public class PlayerMovement : Player
         animator.SetFloat("Horizontal", 0);
         animator.SetFloat("Vertical", 1);
         transform.position = startPos.initialValue;
+        heathText.text = health.ToString();
     }
 
     // Update is called once per frame

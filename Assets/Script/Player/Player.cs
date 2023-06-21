@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public enum PlayerState
 {
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public Rigidbody2D rb;
     public PlayerState state;
+    public TextMeshProUGUI heathText;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -51,6 +53,7 @@ public class Player : MonoBehaviour
         rb.velocity = -direction * 15f;
         yield return new WaitForSeconds(0.1f);
         health--;
+        heathText.text = health.ToString();
         if (health <= 0)
         {
             Debug.Log("Lose Game");
