@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4949435171289251396}
   - component: {fileID: 412353736}
   - component: {fileID: 7828715766623188739}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Monument of the serpent god
   m_TagString: FlockHead
   m_Icon: {fileID: 0}
