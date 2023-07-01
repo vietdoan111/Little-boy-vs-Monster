@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public PlayerState state;
     public TextMeshProUGUI heathText;
+    public TextMeshProUGUI arrowText;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -61,5 +62,11 @@ public class Player : MonoBehaviour
         }
         rb.velocity = Vector2.zero;
         state = PlayerState.walk;
+    }
+
+    public void AddArrow()
+    {
+        arrowNum++;
+        arrowText.text = arrowNum.ToString();
     }
 }

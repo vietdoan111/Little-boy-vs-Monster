@@ -30,6 +30,7 @@ public class PlayerMovement : Player
         animator.SetFloat("Vertical", 1);
         transform.position = startPos.initialValue;
         heathText.text = health.ToString();
+        arrowText.text = arrowNum.ToString();
     }
 
     // Update is called once per frame
@@ -113,6 +114,7 @@ public class PlayerMovement : Player
     void Shoot()
     {
         arrowNum--;
+        arrowText.text = arrowNum.ToString();
         Debug.Log("arrow num when shoot: " + arrowNum);
         GameObject arrow = Instantiate(bulletPrefab, firePointStart, firePoint.rotation);
         Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();

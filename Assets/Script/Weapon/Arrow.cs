@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public enum ArrowState
 {
@@ -38,7 +39,7 @@ public class Arrow : MonoBehaviour
         if (waitTime > maxAppearingTime)
         {
             Destroy(gameObject);
-            player.arrowNum++;
+            player.AddArrow();
             Debug.Log("arrow num: " + player.arrowNum);
         }
     }
@@ -60,7 +61,7 @@ public class Arrow : MonoBehaviour
             rb.velocity = Vector2.zero;
             state = ArrowState.grounded;
             Destroy(gameObject);
-            player.arrowNum++;
+            player.AddArrow();
             Debug.Log("arrow num: " + player.arrowNum);
         }
 
