@@ -20,7 +20,7 @@ public class Menu : MonoBehaviour
         startPos.defaultValue.y = -12.0f;
         startPos.initialValue = startPos.defaultValue;
 
-        openedChests.defaultValue[0] = 1;
+        openedChests.defaultValue[0] = 0;
         openedChests.defaultValue[1] = 0;
         openedChests.initialValue = openedChests.defaultValue;
 
