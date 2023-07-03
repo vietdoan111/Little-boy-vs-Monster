@@ -149,17 +149,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3a8f8d300fef445a54c1b6df5f2c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 3
+  maxArrowNum: 2
   health: 5
   arrowNum: 5
   animator: {fileID: 0}
   rb: {fileID: 0}
   state: 0
+  heathText: {fileID: 0}
+  arrowText: {fileID: 0}
+  openedChests: 
   moveSpeed: 5
   firePoint: {fileID: 1761955822948088817}
   bulletPrefab: {fileID: 3434963068405086867, guid: 3e0e7d7cf5327b546a35b9ee70361ebc, type: 3}
   sword: {fileID: 5889826231859507877}
   arrowForce: 20
   startPos: {fileID: 11400000, guid: cf1c7d94245e4a64aa7296945a2c5ee7, type: 2}
+  listChest: {fileID: 11400000, guid: 520468578120ce540b08736af9e61327, type: 2}
+  playerStats: {fileID: 11400000, guid: 7039a983e6392ae4e9f9cc616dd0600b, type: 2}
 --- !u!95 &5174156064755076329
 Animator:
   serializedVersion: 4

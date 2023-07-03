@@ -10,6 +10,8 @@ TagManager:
   - Flock
   - FlockHead
   - Boss
+  - Chest
+  - Projectile
   layers:
   - Default
   - TransparentFX

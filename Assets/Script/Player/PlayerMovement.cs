@@ -10,6 +10,8 @@ public class PlayerMovement : Player
     public Sword sword;
     public float arrowForce = 20f;
     public VectorValue startPos;
+    public ArrayValue listChest;
+    public ArrayValue playerStats;
 
 
     float horizontalDir, verticalDir;
@@ -22,12 +24,22 @@ public class PlayerMovement : Player
     bool isMelee;
     Vector3 firePointStart;
 
+    private void OnEnable()
+    {
+        LoadGame();
+        openedChests = listChest.initialValue;
+        maxHealth = playerStats.initialValue[0];
+        maxArrowNum = playerStats.initialValue[1];
+    }
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         animator.SetFloat("Horizontal", 0);
         animator.SetFloat("Vertical", 1);
+        health = maxHealth;
+        arrowNum = maxArrowNum;
         transform.position = startPos.initialValue;
         heathText.text = health.ToString();
         arrowText.text = arrowNum.ToString();
@@ -139,5 +151,21 @@ public class PlayerMovement : Player
         yield return new WaitForSeconds(sword.swingTime);
         sword.gameObject.SetActive(false);
         state = PlayerState.walk;
+    }
+
+    void LoadGame()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        if (data == null) return;
+
+        startPos.defaultValue.x = data.position[0];
+        startPos.defaultValue.y = data.position[1];
+        startPos.initialValue = startPos.defaultValue;
+
+        listChest.defaultValue = data.openedChests;
+        listChest.initialValue = listChest.defaultValue;
+
+        playerStats.defaultValue = data.playerStats;
+        playerStats.initialValue = playerStats.defaultValue;
     }
 }

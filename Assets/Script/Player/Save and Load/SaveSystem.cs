@@ -42,4 +42,10 @@ public static class SaveSystem
             return null;
         }
     }
+
+    public static void ClearData()
+    {
+        string path = Application.persistentDataPath + "/player.txt";
+        File.Delete(path);
+    }
 }

@@ -57,6 +57,7 @@ public class Arrow : MonoBehaviour
 
         if (collision.collider.CompareTag("Arrow"))
         {
+            if (state == ArrowState.grounded) return;
             Debug.Log("arrow grounded");
             rb.velocity = Vector2.zero;
             state = ArrowState.grounded;

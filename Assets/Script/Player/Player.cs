@@ -13,6 +13,8 @@ public enum PlayerState
 
 public class Player : MonoBehaviour
 {
+    public int maxHealth;
+    public int maxArrowNum;
     public int health;
     public int arrowNum = 5;
     public Animator animator;
@@ -20,6 +22,7 @@ public class Player : MonoBehaviour
     public PlayerState state;
     public TextMeshProUGUI heathText;
     public TextMeshProUGUI arrowText;
+    public int[] openedChests = new int[2];
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -27,20 +30,23 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Pick up arrow");
             Destroy(collision.gameObject);
-            arrowNum++;
+            AddArrow();
         }
 
         if (collision.collider.CompareTag("Enemy") || collision.collider.CompareTag("Flock")
-            || collision.collider.CompareTag("FlockHead") || collision.collider.CompareTag("Boss")) Stagger(collision);
+            || collision.collider.CompareTag("FlockHead") || collision.collider.CompareTag("Boss")) Stagger(collision.collider);
+    }
 
-        if (collision.collider.CompareTag("Fire"))
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Projectile"))
         {
-            Stagger(collision);
-            Destroy(collision.gameObject);
+            Stagger(collider);
+            Destroy(collider.gameObject);
         }
     }
 
-    public void Stagger(Collision2D collision)
+    public void Stagger(Collider2D collision)
     {
         if (state == PlayerState.stagger) return;
         Vector3 enemyWeapPos = collision.transform.position;
@@ -68,5 +74,18 @@ public class Player : MonoBehaviour
     {
         arrowNum++;
         arrowText.text = arrowNum.ToString();
+    }
+
+    public void IncreaseMaxHealth()
+    {
+        maxHealth++;
+        health++;
+        heathText.text = health.ToString();
+    }
+
+    public void IncreaseMaxArrow()
+    {
+        maxArrowNum++;
+        AddArrow();
     }
 }
