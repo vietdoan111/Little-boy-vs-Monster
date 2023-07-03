@@ -50209,8 +50209,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -6.7016087, y: 26.04544}
-      - {x: -47.087547, y: 25.452261}
+    - - {x: -6.571714, y: 25.266073}
+      - {x: -46.697865, y: 25.192472}
       - {x: -47.001568, y: -22.1274}
       - {x: 21.164968, y: -21.592411}
       - {x: 20.925194, y: 25.220467}
@@ -50596,6 +50596,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1475888742}
+    - target: {fileID: 4157493197926066918, guid: adad946f46b2a554b92b54cfad72d8d1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157493198352510900, guid: adad946f46b2a554b92b54cfad72d8d1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157493198955715798, guid: adad946f46b2a554b92b54cfad72d8d1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adad946f46b2a554b92b54cfad72d8d1, type: 3}
 --- !u!1001 &5037935284986819755
