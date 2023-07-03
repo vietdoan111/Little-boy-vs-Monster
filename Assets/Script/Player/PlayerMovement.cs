@@ -75,6 +75,7 @@ public class PlayerMovement : Player
     void RotateWeapon()
     {
         firePointStart = firePoint.position;
+        sword.isUp = false;
         if (horizontalDir > 0.5)
         {
             sword.transform.eulerAngles = turnRight;
@@ -91,6 +92,7 @@ public class PlayerMovement : Player
         {
             if (verticalDir > 0.5)
             {
+                sword.isUp = true;
                 sword.transform.eulerAngles = turnUp;
                 firePoint.eulerAngles = turnUp;
                 firePointStart.y += 2.5f;

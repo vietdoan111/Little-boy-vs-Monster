@@ -10,13 +10,18 @@ public class Sword : MonoBehaviour
     public Transform swordTip;
     public Vector2 swordRange = new Vector2(1.0f, 1.0f);
     public LayerMask enemyMask;
+    public bool isUp;
+    public SpriteRenderer sprite;
 
     Vector3 rotateEnd;
 
     private void OnEnable()
     {
+        sprite = GetComponent<SpriteRenderer>();
+        sprite.sortingOrder = 2;
         rotateEnd = swordTrans.eulerAngles;
         rotateEnd += new Vector3(0, 0, 90.0f);
+        if (isUp) sprite.sortingOrder = 1;
     }
 
     private void FixedUpdate()
