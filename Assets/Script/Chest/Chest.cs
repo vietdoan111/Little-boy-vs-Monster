@@ -28,6 +28,7 @@ public class Chest : MonoBehaviour
         if (isContact && Input.GetButtonDown("Fire3"))
         {
             isOpen = true;
+            isContact = false;
             openChest.SetActive(isOpen);
             closeChest.SetActive(!isOpen);
             talk.SetActive(false);
