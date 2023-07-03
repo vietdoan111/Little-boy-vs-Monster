@@ -45,14 +45,6 @@ public class Menu : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
         if (data == null) return;
 
-        startPos.defaultValue.x = data.position[0];
-        startPos.defaultValue.y = data.position[1];
-        startPos.initialValue = startPos.defaultValue;
-
-        openedChests.defaultValue = data.openedChests;
-
-        playerStats.defaultValue = data.playerStats;
-
         SceneManager.LoadScene(data.map);
     }
 }
