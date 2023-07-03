@@ -16,8 +16,6 @@ public class EnemyProjectile : MonoBehaviour
     {
         waitTime += Time.fixedDeltaTime;
 
-        if (waitTime > maxNonTriggerTime) col.isTrigger = false;
-
         if (waitTime < maxFlyingTime)
             transform.position = Vector2.MoveTowards(transform.position, targetPos, 7.0f * Time.fixedDeltaTime);
 
