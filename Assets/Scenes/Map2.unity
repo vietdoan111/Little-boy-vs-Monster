@@ -102162,6 +102162,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468248538}
     m_Modifications:
+    - target: {fileID: 1410821130841175664, guid: 19a90c4ac4b873b4395cde75fad36f33, type: 3}
+      propertyPath: maxSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410821130841175664, guid: 19a90c4ac4b873b4395cde75fad36f33, type: 3}
+      propertyPath: startCount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1410821130841175666, guid: 19a90c4ac4b873b4395cde75fad36f33, type: 3}
       propertyPath: m_Name
       value: Cobra Flock

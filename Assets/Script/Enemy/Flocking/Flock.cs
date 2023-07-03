@@ -55,6 +55,10 @@ public class Flock : MonoBehaviour
     {
         foreach (FlockAgent agent in agents)
         {
+            if (agent == null)
+            {
+                continue;
+            }
             List<Transform> context = GetNearbyObject(agent);
 
             //debug check neighbor

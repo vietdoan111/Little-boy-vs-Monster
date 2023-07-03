@@ -47,10 +47,10 @@ MonoBehaviour:
   agentPrefab: {fileID: 4439739923062134938, guid: 1f997f61016e0374f9e0aa475d0df8cc, type: 3}
   agents: []
   behavior: {fileID: 11400000, guid: 7456b91c20967c841a43285f29f9d6bc, type: 2}
-  startCount: 20
+  startCount: 10
   agentDensity: 0.3
   driveFactor: 10
-  maxSpeed: 4
+  maxSpeed: 3
   neighborRadius: 3
   avoidanceRadiusMultiplier: 1.5
   squareMaxSpeed: 0
