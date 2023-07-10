@@ -63,7 +63,6 @@ public class GreatTreantArm : GreatTreant
 
     public void Chase()
     {
-        if (state != GreatTreantState.normal) return;
         state = GreatTreantState.normal;
         Vector2 lookDir = target.position - transform.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg + 90f;
@@ -73,7 +72,6 @@ public class GreatTreantArm : GreatTreant
 
     public void Retreat()
     {
-        if (state != GreatTreantState.normal) return;
         state = GreatTreantState.normal;
         StartCoroutine(retreatCo());
     }
