@@ -25,4 +25,9 @@ public class EnemyProjectile : MonoBehaviour
             Debug.Log("Destroy fire");
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Arrow")) Destroy(gameObject);
+    }
 }

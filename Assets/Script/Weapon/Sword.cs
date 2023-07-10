@@ -14,14 +14,14 @@ public class Sword : MonoBehaviour
     public SpriteRenderer sprite;
 
     Vector3 rotateEnd;
-
+    //List<Collider2D> alreadyDmg = new List<Collider2D>();
     private void OnEnable()
     {
         sprite = GetComponent<SpriteRenderer>();
         sprite.sortingOrder = 2;
         rotateEnd = swordTrans.eulerAngles;
         rotateEnd += new Vector3(0, 0, 90.0f);
-        if (isUp) sprite.sortingOrder = 1;
+        if (isUp) sprite.sortingOrder = 0;
     }
 
     private void FixedUpdate()
@@ -59,6 +59,28 @@ public class Sword : MonoBehaviour
 
             GreatTreant greatTreant = hit.GetComponent<GreatTreant>();
             if (greatTreant != null) greatTreant.TakeDamage();
+
+            Debug.Log("hit enemy num " + hitEnemies.Length);
+
+            //if(hit != null) alreadyDmg.Add(hit);
         }
+
+        /*Collider2D hit = Physics2D.OverlapBox(swordTip.position, swordRange, -45.0f, enemyMask);
+        int count = 0;
+        Enemy enemy = hit.GetComponent<Enemy>();
+        if (enemy != null) enemy.TakeDamage(swordTip.position);
+
+        FlockAgent agent = hit.GetComponent<FlockAgent>();
+        if (agent != null) agent.TakeDamage(swordTip.position);
+
+        Monument monument = hit.GetComponent<Monument>();
+        if (monument != null) monument.TakeDamage();
+
+        GreatTreant greatTreant = hit.GetComponent<GreatTreant>();
+        if (greatTreant != null)
+        {
+            if(count != 0) greatTreant.TakeDamage();
+
+        }*/
     }
 }

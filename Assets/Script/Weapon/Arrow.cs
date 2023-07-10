@@ -66,11 +66,6 @@ public class Arrow : MonoBehaviour
             Debug.Log("arrow num: " + player.arrowNum);
         }
 
-        if (collision.collider.CompareTag("Fire"))
-        {
-            Destroy(collision.gameObject);
-        }
-
         if (collision.collider.CompareTag("Flock"))
         {
             if (state == ArrowState.grounded) return;

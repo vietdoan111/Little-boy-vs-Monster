@@ -30,6 +30,7 @@ public class GreatTreantHead : GreatTreant
     }
     void FixedUpdate()
     {
+        if (state == GreatTreantState.stagger) return;
         if (Vector2.Distance(transform.position, target.position) < lookRadius && state != GreatTreantState.enraged)
         {
             state = GreatTreantState.normal;

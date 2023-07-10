@@ -21,13 +21,14 @@ public class GreatTreant : MonoBehaviour
     public void TakeDamage()
     {
         if (state == GreatTreantState.stagger) return;
+        //state = GreatTreantState.stagger;
         StartCoroutine(TakeDmgCo());
     }
 
     public IEnumerator TakeDmgCo()
     {
         state = GreatTreantState.stagger;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
         health--;
         rb.velocity = Vector2.zero;
         if (health < 1) Destroy(gameObject);

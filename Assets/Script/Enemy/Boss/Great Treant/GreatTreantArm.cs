@@ -32,6 +32,7 @@ public class GreatTreantArm : GreatTreant
 
     private void Update()
     {
+        if (state == GreatTreantState.stagger) return;
         if (health < 7)
         {
             state = GreatTreantState.enraged;
@@ -49,6 +50,8 @@ public class GreatTreantArm : GreatTreant
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (state == GreatTreantState.stagger) return;
+        if (state != GreatTreantState.normal) return;
         if (Vector2.Distance(transform.position, target.position) <= lookRadius && Vector2.Distance(transform.position, startingPos) <= 1.5f)
         {
             Chase();
@@ -61,6 +64,7 @@ public class GreatTreantArm : GreatTreant
 
     public void Chase()
     {
+        if (state != GreatTreantState.normal) return;
         state = GreatTreantState.normal;
         Vector2 lookDir = target.position - transform.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg + 90f;
@@ -70,14 +74,15 @@ public class GreatTreantArm : GreatTreant
 
     public void Retreat()
     {
-        state = GreatTreantState.stop;
+        if (state != GreatTreantState.normal) return;
+        state = GreatTreantState.normal;
         StartCoroutine(retreatCo());
     }
 
     IEnumerator retreatCo()
     {
         yield return new WaitForSeconds(0.2f);
-        state = GreatTreantState.retreat;
+        state = GreatTreantState.normal;
         transform.position = Vector2.MoveTowards(transform.position, startingPos, speed * Time.deltaTime);
     }
 }
