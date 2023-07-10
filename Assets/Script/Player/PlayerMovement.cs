@@ -54,6 +54,7 @@ public class PlayerMovement : Player
 
     private void FixedUpdate()
     {
+        if (state == PlayerState.stagger) return;
         if (state != PlayerState.attack)
         {
             RotateWeapon();
