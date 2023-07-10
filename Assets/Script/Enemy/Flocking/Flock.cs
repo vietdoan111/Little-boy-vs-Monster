@@ -41,7 +41,7 @@ public class Flock : MonoBehaviour
         {
             FlockAgent agent = Instantiate(
                 agentPrefab,
-                Random.insideUnitCircle * startCount * agentDensity,
+                (Vector2)transform.position + Random.insideUnitCircle * startCount * agentDensity,
                 Quaternion.identity,
                 transform
                 );
