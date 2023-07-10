@@ -51,7 +51,7 @@ public class GreatTreantArm : GreatTreant
     void FixedUpdate()
     {
         if (state == GreatTreantState.stagger) return;
-        if (state != GreatTreantState.normal) return;
+        if (state != GreatTreantState.normal || state != GreatTreantState.sleep) return;
         if (Vector2.Distance(transform.position, target.position) <= lookRadius && Vector2.Distance(transform.position, startingPos) <= 1.5f)
         {
             Chase();
