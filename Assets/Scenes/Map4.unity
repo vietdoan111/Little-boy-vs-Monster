@@ -29816,22 +29816,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1692444886}
     m_Modifications:
-    - target: {fileID: 1766329001486989, guid: 5a528135713c6a844b4e27b7e920838f, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1766329001486989, guid: 5a528135713c6a844b4e27b7e920838f, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1796830917
-      objectReference: {fileID: 0}
-    - target: {fileID: 5174156064755076309, guid: 5a528135713c6a844b4e27b7e920838f, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5174156064755076309, guid: 5a528135713c6a844b4e27b7e920838f, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1796830917
-      objectReference: {fileID: 0}
     - target: {fileID: 5174156064755076328, guid: 5a528135713c6a844b4e27b7e920838f, type: 3}
       propertyPath: arrowText
       value: 

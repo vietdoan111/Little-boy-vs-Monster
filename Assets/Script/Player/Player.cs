@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     public PlayerState state;
     public TextMeshProUGUI heathText;
     public TextMeshProUGUI arrowText;
-    public int[] openedChests = new int[2];
+    public int[] openedChests;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

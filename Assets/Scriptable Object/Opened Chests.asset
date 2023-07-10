@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fabc7190225112b4ba8b0f76011e4e81, type: 3}
   m_Name: Opened Chests
   m_EditorClassIdentifier: 
-  initialValue: 0100000001000000
-  defaultValue: 0100000001000000
+  initialValue: 00000000000000000000000000000000
+  defaultValue: 00000000000000000000000000000000

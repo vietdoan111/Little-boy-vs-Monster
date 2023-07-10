@@ -22,8 +22,7 @@ public class PlayerData
         playerStats[0] = player.maxHealth;
         playerStats[1] = player.maxArrowNum;
 
-        openedChests = new int[2];
-        openedChests[0] = player.openedChests[0];
-        openedChests[1] = player.openedChests[1];
+        openedChests = new int[4];
+        for (int i = 0; i < openedChests.Length; i++) openedChests[i] = player.openedChests[i];
     }
 }
