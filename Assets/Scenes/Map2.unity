@@ -1447,7 +1447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4157493197387821566, guid: adad946f46b2a554b92b54cfad72d8d1, type: 3}
       propertyPath: chestIndex
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4157493197926066912, guid: adad946f46b2a554b92b54cfad72d8d1, type: 3}
       propertyPath: m_SortingOrder
@@ -102353,7 +102353,7 @@ PrefabInstance:
       objectReference: {fileID: 1530794972}
     - target: {fileID: 4157493197387821566, guid: adad946f46b2a554b92b54cfad72d8d1, type: 3}
       propertyPath: chestIndex
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adad946f46b2a554b92b54cfad72d8d1, type: 3}
